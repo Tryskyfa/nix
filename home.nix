@@ -18,4 +18,13 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # misc
+  home.packages = with pkgs; [
+    gcc
+    ];
+
+  imports = [
+    ./homeManagerModules/zsh.nix
+  ];
 }
