@@ -32,7 +32,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.tryskyfa = import ./home.nix;
+          home-manager.users.tryskyfa = import ./home/home.nix;
         }
         ];
       };

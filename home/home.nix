@@ -25,7 +25,7 @@
     ];
 
   imports = [
-    ./homeManagerModules/zsh.nix
+    ./zsh/zsh.nix
   ];
 
   home.sessionVariables = {
