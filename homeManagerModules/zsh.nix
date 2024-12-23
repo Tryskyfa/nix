@@ -10,6 +10,11 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     defaultKeymap = "viins";
+    antidote.enable = true;
+
+    antidote.plugins = [
+      "romkatv/powerlevel10k kind:fpath"
+    ];
 
     shellAliases = {
       "sudo" = "sudo ";
@@ -31,6 +36,10 @@
         fi
         rm -f -- "$tmp"
       }
+
+      # for powerlevel10k
+      [[ ! -f ${./p10k.zsh} ]] || source ${./p10k.zsh}
+      autoload -Uz promptinit && promptinit && prompt powerlevel10k
     '';
   };
 
