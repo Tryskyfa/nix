@@ -27,4 +27,10 @@
   imports = [
     ./homeManagerModules/zsh.nix
   ];
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "firefox";
+    MANPAGER = "nvim +Man!";
+  };
 }

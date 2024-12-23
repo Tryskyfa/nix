@@ -82,8 +82,8 @@
     isNormalUser = true;
     description = "Jan Schlachter";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
+    shell = pkgs.zsh;
+    ignoreShellProgramCheck = true;
   };
 
   # Install firefox.
@@ -100,12 +100,9 @@
      yazi
      tmux
      kitty
-     zsh
-     oh-my-zsh
      git
      git-doc
      stow
-     oh-my-zsh
      discord
   ];
 
