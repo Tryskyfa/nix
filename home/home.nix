@@ -26,6 +26,7 @@
 
   imports = [
     ./zsh/zsh.nix
+    ./nvim/nvim.nix
   ];
 
   home.sessionVariables = {
