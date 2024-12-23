@@ -11,6 +11,7 @@
     syntaxHighlighting.enable = true;
     defaultKeymap = "viins";
     antidote.enable = true;
+    autocd = true;
 
     antidote.plugins = [
       "romkatv/powerlevel10k kind:fpath"
