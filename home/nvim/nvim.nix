@@ -25,7 +25,6 @@
         type = "lua";
         config = "require(\"Comment\").setup()";
       }
-      neodev-nvim
       nvim-cmp 
       {
         plugin = nvim-cmp;
