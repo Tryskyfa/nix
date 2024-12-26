@@ -9,6 +9,9 @@
       lua-language-server
       xclip
       nil
+      ripgrep
+      fd
+      lazygit
     ];
 
     plugins = with pkgs.vimPlugins; [
