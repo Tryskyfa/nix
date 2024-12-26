@@ -33,7 +33,7 @@ require('lspconfig').lua_ls.setup {
 	root_dir = function()
         return vim.loop.cwd()
     end,
-	cmd = { "lua-lsp" },
+	cmd = { "lua-language-server" },
     settings = {
         Lua = {
             workspace = { checkThirdParty = false },
@@ -42,7 +42,7 @@ require('lspconfig').lua_ls.setup {
     }
 }
 
-require('lspconfig').rnix.setup {
+require('lspconfig').nil_ls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }
