@@ -25,7 +25,6 @@
         type = "lua";
         config = "require(\"Comment\").setup()";
       }
-      nvim-cmp 
       {
         plugin = nvim-cmp;
         type = "lua";
@@ -57,6 +56,8 @@
         type = "viml";
         config = "colorscheme tokyonight";
       }
+
+      vim-tmux-navigator
     ];
 
     extraLuaConfig = ''
