@@ -58,6 +58,11 @@
       }
 
       vim-tmux-navigator
+      {
+        plugin = neo-tree-nvim;
+        type = "lua";
+        config = builtins.readFile ./plugin/neo-tree.lua;
+      }
     ];
 
     extraLuaConfig = ''
