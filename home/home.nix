@@ -22,6 +22,7 @@
   # misc
   home.packages = with pkgs; [
     gcc
+    xclip
     ];
 
   imports = [
