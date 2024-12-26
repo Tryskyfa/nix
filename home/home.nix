@@ -23,6 +23,7 @@
   home.packages = with pkgs; [
     gcc
     xclip
+    lazygit
     ];
 
   imports = [
