@@ -44,6 +44,7 @@
       lualine-nvim
       nvim-web-devicons
       luasnip
+      lazydev-nvim
       {
         plugin = nvim-treesitter.withAllGrammars;
         type = "lua";

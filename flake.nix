@@ -7,6 +7,9 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    plugin-lazydev.url = "github:folke/lazydev.nvim";
+    plugin-lazydev.flake = false;
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:

@@ -41,6 +41,11 @@ require('lspconfig').lua_ls.setup {
         },
     }
 }
+require("lazydev").setup({
+	library = {
+		{ path = "luvit-meta/library", words = { "vim%.uv" } },
+	},
+})
 
 require('lspconfig').nil_ls.setup {
     on_attach = on_attach,
