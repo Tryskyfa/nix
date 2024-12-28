@@ -5,6 +5,7 @@ vim.g.maplocalleader = ' '
 vim.opt.clipboard = "unnamedplus" -- use system clipboard
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.mouse = "a" -- allow the mouse to be used in Nvim
+vim.opt.smoothscroll = true
 
 -- Tab
 vim.opt.tabstop = 2 -- number of visual spaces per TAB
@@ -26,3 +27,5 @@ vim.opt.incsearch = true -- search as characters are entered
 vim.opt.hlsearch = true -- do highlight matches
 vim.opt.ignorecase = true -- ignore case in searches by default
 vim.opt.smartcase = true -- but make it case sensitive if an uppercase is entered
+
+vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
