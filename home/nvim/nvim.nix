@@ -39,7 +39,11 @@
       cmp_luasnip
       cmp-nvim-lsp
       friendly-snippets
-      lualine-nvim
+      {
+        plugin = lualine-nvim;
+        type = "lua";
+        config = builtins.readFile ./plugin/lualine.lua;
+      }
       nvim-web-devicons
       luasnip
       lazydev-nvim
