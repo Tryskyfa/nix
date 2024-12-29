@@ -57,8 +57,8 @@
 
       {
         plugin = tokyonight-nvim;
-        type = "viml";
-        config = "colorscheme tokyonight";
+        type = "lua";
+        config = builtins.readFile ./plugin/tokyonight.lua;
       }
 
       vim-tmux-navigator
