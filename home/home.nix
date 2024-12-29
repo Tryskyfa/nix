@@ -24,6 +24,7 @@
     gcc
     xclip
     lazygit
+    imagemagick
     ];
 
   imports = [
