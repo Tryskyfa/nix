@@ -5,8 +5,8 @@ bufferline.setup {
         style_preset = bufferline.style_preset.default, -- or bufferline.style_preset.minimal,
         themable = true, -- allows highlight groups to be overriden i.e. sets highlights as default
         numbers = "none",
-        close_command = "bdelete! %d",       -- can be a string | function, | false see "Mouse actions"
-        right_mouse_command = "bdelete! %d", -- can be a string | function | false, see "Mouse actions"
+        close_command = "lua require(\"snacks\").bufdelete()",       -- can be a string | function, | false see "Mouse actions"
+        right_mouse_command = "lua require(\"snacks\").bufdelete()", -- can be a string | function | false, see "Mouse actions"
         left_mouse_command = "buffer %d",    -- can be a string | function, | false see "Mouse actions"
         middle_mouse_command = nil,          -- can be a string | function, | false see "Mouse actions"
         buffer_close_icon = '󰅖',
