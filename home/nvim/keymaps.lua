@@ -42,3 +42,9 @@ map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
 
 -- neo-tree
 map("n", "<leader>e", function() require('neo-tree.command').execute({ toggle = true }) end, { desc = "Open neo-tree", remap = true })
+
+-- buffers / bufferline
+map("n", "H", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Prev Buffer", remap = true })
+map("n", "L", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next Buffer", remap = true })
+map("n", "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", { desc = "Delete Buffers to the Left", remap = true })
+map("n", "<leader>br", "<Cmd>BufferLineCloseRight<CR>", { desc = "Delete Buffers to the Right", remap = true })

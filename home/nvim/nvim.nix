@@ -52,20 +52,22 @@
         type = "lua";
         config = builtins.readFile ./plugin/treesitter.lua;
       }
-
       vim-nix
-
       {
         plugin = tokyonight-nvim;
         type = "lua";
         config = builtins.readFile ./plugin/tokyonight.lua;
       }
-
       vim-tmux-navigator
       {
         plugin = neo-tree-nvim;
         type = "lua";
         config = builtins.readFile ./plugin/neo-tree.lua;
+      }
+      {
+        plugin = bufferline-nvim;
+        type = "lua";
+        config = builtins.readFile ./plugin/bufferline.lua;
       }
     ];
 
