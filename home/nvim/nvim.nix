@@ -69,6 +69,11 @@
         type = "lua";
         config = builtins.readFile ./plugin/bufferline.lua;
       }
+      {
+        plugin = snacks-nvim;
+        type = "lua";
+        config = builtins.readFile ./plugin/snacks.lua;
+      }
     ];
 
     extraLuaConfig = ''
