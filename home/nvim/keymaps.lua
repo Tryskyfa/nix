@@ -50,3 +50,7 @@ map("n", "L", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next Buffer", remap = tr
 map("n", "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", { desc = "Delete Buffers to the Left", remap = true })
 map("n", "<leader>br", "<Cmd>BufferLineCloseRight<CR>", { desc = "Delete Buffers to the Right", remap = true })
 map("n", "<leader>bd", function() require("snacks").bufdelete() end, { desc = "Delete current buffer", remap = true })
+
+-- telescope
+map("n", "<leader><space>", function() require("telescope.builtin").git_files() end, { desc = "Find git files", remap = true })
+map("n", "<leader>fa", function() require("telescope.builtin").find_files({ hidden = true, no_ignore = true, no_ignore_parent = true }) end, { desc = "Find all files", remap = true })
