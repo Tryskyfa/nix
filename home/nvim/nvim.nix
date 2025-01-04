@@ -52,7 +52,6 @@
         type = "lua";
         config = builtins.readFile ./plugin/treesitter.lua;
       }
-      vim-nix
       {
         plugin = tokyonight-nvim;
         type = "lua";
