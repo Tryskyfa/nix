@@ -54,3 +54,6 @@ map("n", "<leader>bd", function() require("snacks").bufdelete() end, { desc = "D
 -- telescope
 map("n", "<leader><space>", function() require("telescope.builtin").git_files() end, { desc = "Find git files", remap = true })
 map("n", "<leader>fa", function() require("telescope.builtin").find_files({ hidden = true, no_ignore = true, no_ignore_parent = true }) end, { desc = "Find all files", remap = true })
+
+-- lazygit
+map("n", "<leader>gg", function() Snacks.lazygit() end, { desc = "Open lazygit", remap = true })
