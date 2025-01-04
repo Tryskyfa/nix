@@ -25,6 +25,7 @@
     xclip
     lazygit
     imagemagick
+    tree
     ];
 
   imports = [
