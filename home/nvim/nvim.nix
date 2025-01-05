@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -12,6 +13,8 @@
       ripgrep
       fd
       lazygit
+      # formater
+      nixfmt-rfc-style
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -72,6 +75,11 @@
         plugin = snacks-nvim;
         type = "lua";
         config = builtins.readFile ./plugin/snacks.lua;
+      }
+      {
+        plugin = none-ls-nvim;
+        type = "lua";
+        config = builtins.readFile ./plugin/none-ls.lua;
       }
     ];
 
