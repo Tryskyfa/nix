@@ -15,6 +15,7 @@
       lazygit
       # formater
       nixfmt-rfc-style
+      stylua
     ];
 
     plugins = with pkgs.vimPlugins; [
