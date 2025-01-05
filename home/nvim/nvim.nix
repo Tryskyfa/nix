@@ -78,6 +78,7 @@
     extraLuaConfig = ''
       ${builtins.readFile ./options.lua}
       ${builtins.readFile ./keymaps.lua}
+      ${builtins.readFile ./autocmds.lua}
     '';
   };
 }
