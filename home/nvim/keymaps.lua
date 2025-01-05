@@ -44,19 +44,28 @@ map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
 map("n", "<esc>", "<cmd>noh<cr>", { desc = "clear search", remap = true })
 
 -- neo-tree
-map("n", "<leader>e", function() require('neo-tree.command').execute({ toggle = true }) end,
-    { desc = "Open neo-tree", remap = true })
+map("n", "<leader>e", function()
+  require("neo-tree.command").execute({ toggle = true })
+end, { desc = "Open neo-tree", remap = true })
 
 -- buffers / bufferline
 map("n", "H", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Prev Buffer", remap = true })
 map("n", "L", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next Buffer", remap = true })
 map("n", "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", { desc = "Delete Buffers to the Left", remap = true })
 map("n", "<leader>br", "<Cmd>BufferLineCloseRight<CR>", { desc = "Delete Buffers to the Right", remap = true })
-map("n", "<leader>bd", function() require("snacks").bufdelete() end, { desc = "Delete current buffer", remap = true })
+map("n", "<leader>bd", function()
+  require("snacks").bufdelete()
+end, { desc = "Delete current buffer", remap = true })
 
 -- telescope
-map("n", "<leader><space>", function() require("telescope.builtin").git_files() end, { desc = "Find git files", remap = true })
-map("n", "<leader>fa", function() require("telescope.builtin").find_files({ hidden = true, no_ignore = true, no_ignore_parent = true }) end, { desc = "Find all files", remap = true })
+map("n", "<leader><space>", function()
+  require("telescope.builtin").git_files()
+end, { desc = "Find git files", remap = true })
+map("n", "<leader>fa", function()
+  require("telescope.builtin").find_files({ hidden = true, no_ignore = true, no_ignore_parent = true })
+end, { desc = "Find all files", remap = true })
 
 -- lazygit
-map("n", "<leader>gg", function() Snacks.lazygit() end, { desc = "Open lazygit", remap = true })
+map("n", "<leader>gg", function()
+  Snacks.lazygit()
+end, { desc = "Open lazygit", remap = true })
