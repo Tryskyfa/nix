@@ -26,7 +26,7 @@
     lazygit
     imagemagick
     tree
-    ];
+  ];
 
   imports = [
     ./zsh/zsh.nix
