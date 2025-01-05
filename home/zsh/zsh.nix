@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
 
   programs.zsh = {
     enable = true;
@@ -28,6 +29,8 @@
     };
 
     initExtra = ''
+      bindkey "^N" clear-screen
+
       # for yazi tui file explorer
       function y() {
         local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
