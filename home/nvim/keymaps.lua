@@ -64,6 +64,9 @@ end, { desc = "Find git files", remap = true })
 map("n", "<leader>fa", function()
   require("telescope.builtin").find_files({ hidden = true, no_ignore = true, no_ignore_parent = true })
 end, { desc = "Find all files", remap = true })
+map("n", "<leader>/", function()
+  require("telescope.builtin").live_grep()
+end, { desc = "Grep files", remap = true })
 
 -- lazygit
 map("n", "<leader>gg", function()
