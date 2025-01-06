@@ -72,3 +72,6 @@ end, { desc = "Grep files", remap = true })
 map("n", "<leader>gg", function()
   Snacks.lazygit()
 end, { desc = "Open lazygit", remap = true })
+
+-- mini.surround disable default "s" behavior
+map({ "n", "x" }, "s", "<Nop>")

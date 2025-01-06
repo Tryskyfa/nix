@@ -87,6 +87,11 @@
         type = "lua";
         config = builtins.readFile ./plugin/gitsigns.lua;
       }
+      {
+        plugin = mini-surround;
+        type = "lua";
+        config = builtins.readFile ./plugin/mini-surround.lua;
+      }
     ];
 
     extraLuaConfig = ''
