@@ -82,6 +82,11 @@
         type = "lua";
         config = builtins.readFile ./plugin/none-ls.lua;
       }
+      {
+        plugin = gitsigns-nvim;
+        type = "lua";
+        config = builtins.readFile ./plugin/gitsigns.lua;
+      }
     ];
 
     extraLuaConfig = ''
