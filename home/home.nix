@@ -26,11 +26,13 @@
     lazygit
     imagemagick
     tree
+    noto-fonts
   ];
 
   imports = [
     ./zsh/zsh.nix
     ./nvim/nvim.nix
+    ./sway/sway.nix
   ];
 
   home.sessionVariables = {
