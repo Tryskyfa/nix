@@ -22,8 +22,8 @@
 
         keybindings = {
           "${mod}+Return" = "exec kitty";
-          "${mod}+Shift+q" = "kill";
-          "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show combi -config ~/.config/rofi/config.rasi";
+          "${mod}+w" = "kill";
+          "Alt+space" = "exec ${pkgs.rofi}/bin/rofi -show combi -config ~/.config/rofi/config.rasi";
           "${mod}+h" = "focus left";
           "${mod}+j" = "focus down";
           "${mod}+k" = "focus up";
@@ -32,14 +32,11 @@
           "${mod}+Shift+j" = "move down";
           "${mod}+Shift+k" = "move up";
           "${mod}+Shift+l" = "move right";
-          "${mod}+s" = "splith";
-          "${mod}+v" = "splitv";
+          "${mod}+d" = "splith";
+          "${mod}+r" = "splitv";
           "${mod}+f" = "fullscreen toggle";
-          "${mod}+w" = "layout stacking";
-          "${mod}+t" = "layout tabbed";
           "${mod}+e" = "layout toggle split";
           "${mod}+Shift+space" = "floating toggle";
-          "${mod}+space" = "focus mode_toggle";
           "${mod}+1" = "workspace number 1";
           "${mod}+2" = "workspace number 2";
           "${mod}+3" = "workspace number 3";
@@ -61,9 +58,11 @@
           "${mod}+Shift+9" = "move container to workspace number 9";
           "${mod}+Shift+0" = "move container to workspace number 10";
           "${mod}+Shift+r" = "reload";
+          "${mod}+p" = "focus prev";
+          "${mod}+n" = "focus next";
           "${mod}+Shift+e" =
             "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
-          "${mod}+r" = "mode resize";
+          "${mod}+v" = "mode resize";
         };
       };
 
