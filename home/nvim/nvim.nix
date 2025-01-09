@@ -8,7 +8,7 @@
 
     extraPackages = with pkgs; [
       lua-language-server
-      xclip
+      wl-clipboard
       nil
       ripgrep
       fd
