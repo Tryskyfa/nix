@@ -70,7 +70,7 @@
       extraConfigEarly = ''
         # give sway a little time to startup before starting kanshi.
         exec sleep 5; systemctl --user start kanshi.service
-        exec_always eval $(/run/wrappers/bin/gnome-keyring-daemon --start --daemonize)
+        exec_always /run/wrappers/bin/gnome-keyring-daemon --start --daemonize
       '';
 
       extraConfig = ''
