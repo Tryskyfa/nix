@@ -27,6 +27,8 @@
     imagemagick
     tree
     noto-fonts
+    htop
+    btop
   ];
 
   imports = [
