@@ -32,10 +32,11 @@
           "${mod}+Shift+j" = "move down";
           "${mod}+Shift+k" = "move up";
           "${mod}+Shift+l" = "move right";
-          "${mod}+d" = "splith";
-          "${mod}+r" = "splitv";
+          "${mod}+r" = "splith";
+          "${mod}+d" = "splitv";
           "${mod}+f" = "fullscreen toggle";
           "${mod}+e" = "layout toggle split";
+          "${mod}+t" = "layout toggle split tabbed";
           "${mod}+Shift+space" = "floating toggle";
           "${mod}+1" = "workspace number 1";
           "${mod}+2" = "workspace number 2";
@@ -60,9 +61,12 @@
           "${mod}+Shift+r" = "reload";
           "${mod}+p" = "focus prev";
           "${mod}+n" = "focus next";
-          "${mod}+Shift+e" =
+          "${mod}+Escape" =
             "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
-          "${mod}+v" = "mode resize";
+          "${mod}+Right" = "resize grow width 2";
+          "${mod}+Left" = "resize shrink width 2";
+          "${mod}+Up" = "resize shrink height 2";
+          "${mod}+Down" = "resize grow height 2";
         };
       };
 
