@@ -39,7 +39,6 @@
             ./hosts/desktop/configuration.nix
             # needed to enable sway on a user level
             ./nixos/user_wm.nix
-            ./nixos/kanshi.nix
             ./nixos/gnome-keyring.nix
             ./nixos/greeter.nix
             home-manager.nixosModules.home-manager

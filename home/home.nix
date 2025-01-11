@@ -35,6 +35,7 @@
     ./zsh/zsh.nix
     ./nvim/nvim.nix
     ./sway/sway.nix
+    ./sway/kanshi.nix
   ];
 
   home.sessionVariables = {
