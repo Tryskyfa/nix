@@ -14,7 +14,7 @@
           {
             criteria = "Dell Inc. AW2521HFA 7LZXL03";
             position = "0,0";
-            mode = "1920x1080@239.757Hz";
+            mode = "1920x1080@119.982Hz";
           }
           {
             criteria = "AOC 2460G5 0x0000D3A1";
