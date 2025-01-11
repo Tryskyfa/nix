@@ -79,6 +79,14 @@
       extraConfig = ''
         input * repeat_delay 200
         input * repeat_rate 40
+        ${builtins.readFile ./catppuccin-macchiato}
+        # target                 title     bg    text   indicator  border
+        client.focused           $lavender $base $text  $rosewater $lavender
+        client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+        client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+        client.urgent            $peach    $base $peach $overlay0  $peach
+        client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+        client.background        $base
       '';
     };
 }
