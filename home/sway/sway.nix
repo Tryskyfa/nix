@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    ./swaybar.nix
+  ];
   home.packages = with pkgs; [
     rofi
   ];
@@ -18,6 +21,11 @@
         # Use kitty as default terminal
         terminal = "kitty";
         startup = [
+        ];
+        bars = [
+          {
+            command = "${pkgs.waybar}/bin/waybar";
+          }
         ];
 
         keybindings = {
