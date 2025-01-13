@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./swaybar.nix
+    ./waybar.nix
   ];
   home.packages = with pkgs; [
     rofi
