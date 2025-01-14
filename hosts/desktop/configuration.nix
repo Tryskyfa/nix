@@ -168,4 +168,6 @@
     "nix-command"
     "flakes"
   ];
+
+  services.power-profiles-daemon.enable = true;
 }
