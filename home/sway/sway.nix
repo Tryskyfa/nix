@@ -21,6 +21,7 @@
         # Use kitty as default terminal
         terminal = "kitty";
         startup = [
+          { command = "nm-applet"; }
         ];
         bars = [
           {
