@@ -29,6 +29,7 @@
     noto-fonts
     htop
     btop
+    pavucontrol
   ];
 
   imports = [
