@@ -20,30 +20,25 @@
       # Choose the order of the modules
       modules-left = [
         "sway/workspaces"
-        "sway/mode"
         "sway/scratchpad"
-        "custom/media"
       ];
       modules-center = [
-        "sway/window"
+        # "sway/window"
       ];
       modules-right = [
-        "mpd"
+        # "mpd"
         "idle_inhibitor"
+        "power-profiles-daemon"
         "pulseaudio"
         "network"
-        "power-profiles-daemon"
         "cpu"
         "memory"
         "temperature"
         "backlight"
         "keyboard-state"
-        "sway/language"
         "battery"
-        "battery#bat2"
         "clock"
         "tray"
-        "custom/power"
       ];
       # Modules configuration
       # "sway/workspaces": {
@@ -83,32 +78,32 @@
         tooltip = true;
         tooltip-format = "{app}: {title}";
       };
-      mpd = {
-        format = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime =%M:%S}/{totalTime:%M:%S}, ⸨{songPosition}|{queueLength}⸩ {volume}% ";
-        format-disconnected = "Disconnected ";
-        format-stopped = "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ";
-        unknown-tag = "N/A";
-        interval = 5;
-        consume-icons = {
-          on = " ";
-        };
-        random-icons = {
-          off = "<span color=\"#f53c3c\"></span> ";
-          on = " ";
-        };
-        repeat-icons = {
-          on = " ";
-        };
-        single-icons = {
-          on = "1 ";
-        };
-        state-icons = {
-          paused = "";
-          playing = "";
-        };
-        tooltip-format = "MPD (connected)";
-        tooltip-format-disconnected = "MPD (disconnected)";
-      };
+      # mpd = {
+      #   format = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime =%M:%S}/{totalTime:%M:%S}, ⸨{songPosition}|{queueLength}⸩ {volume}% ";
+      #   format-disconnected = "Disconnected ";
+      #   format-stopped = "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ";
+      #   unknown-tag = "N/A";
+      #   interval = 5;
+      #   consume-icons = {
+      #     on = " ";
+      #   };
+      #   random-icons = {
+      #     off = "<span color=\"#f53c3c\"></span> ";
+      #     on = " ";
+      #   };
+      #   repeat-icons = {
+      #     on = " ";
+      #   };
+      #   single-icons = {
+      #     on = "1 ";
+      #   };
+      #   state-icons = {
+      #     paused = "";
+      #     playing = "";
+      #   };
+      #   tooltip-format = "MPD (connected)";
+      #   tooltip-format-disconnected = "MPD (disconnected)";
+      # };
       idle_inhibitor = {
         format = "{icon}";
         format-icons = {
@@ -121,9 +116,31 @@
         spacing = 10;
       };
       clock = {
-        # "timezone": "America/New_York",
+        timezone = "Europe/Berlin";
+        format = "{:%F %R }";
         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-        format-alt = "{:%Y-%m-%d}";
+        calendar = {
+          mode = "year";
+          mode-mon-col = 3;
+          weeks-pos = "right";
+          on-scroll = 1;
+          on-click-right = "mode";
+          format = {
+            months = "<span color='#ff79c6'><b>{}</b></span>";
+            days = "<span color='#f8f8f2'><b>{}</b></span>";
+            weeks = "<span color='#50fa7d'>W{}</span>";
+            weekdays = "<span color='#ffb86c'><b>{}</b></span>";
+            today = "<span color='#f1fa8c'><b><u>{}</u></b></span>";
+          };
+        };
+        actions = {
+          on-click-right = "mode";
+          on-click-forward = "tz_up";
+          on-click-backward = "tz_down";
+          on-scroll-up = "shift_up";
+          on-scroll-down = "shift_down";
+        };
+
       };
       cpu = {
         format = "{usage}% ";
@@ -133,10 +150,9 @@
         format = "{}% ";
       };
       temperature = {
-        # "thermal-zone": 2,
-        # "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        thermal-zone = 1;
         critical-threshold = 80;
-        # "format-critical": "{temperatureC}°C {icon}",
+        format-critical = "{temperatureC}°C {icon}";
         format = "{temperatureC}°C {icon}";
         format-icons = [
           ""
@@ -222,30 +238,6 @@
           ];
         };
         on-click = "pavucontrol";
-      };
-      "custom/media" = {
-        format = "{icon} {}";
-        return-type = "json";
-        max-length = 40;
-        format-icons = {
-          spotify = "";
-          default = "🎜";
-        };
-        escape = true;
-        exec = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"; # Script in resources folder
-        # "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-      };
-      "custom/power" = {
-        format = "⏻ ";
-        tooltip = false;
-        menu = "on-click";
-        menu-file = "$HOME/.config/waybar/power_menu.xml"; # Menu file in resources folder
-        menu-actions = {
-          shutdown = "shutdown";
-          reboot = "reboot";
-          suspend = "systemctl suspend";
-          hibernate = "systemctl hibernate";
-        };
       };
     };
   };
