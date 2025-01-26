@@ -67,8 +67,7 @@
           "${mod}+Shift+r" = "reload";
           "${mod}+p" = "focus prev";
           "${mod}+n" = "focus next";
-          "${mod}+Escape" =
-            "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
+          "${mod}+Escape" = "exec swaylock";
           "${mod}+Right" = "resize grow width 2";
           "${mod}+Left" = "resize shrink width 2";
           "${mod}+Up" = "resize shrink height 2";
@@ -93,6 +92,40 @@
         client.urgent            $peach    $base $peach $overlay0  $peach
         client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
         client.background        $base
+
       '';
     };
+  programs.swaylock = {
+    enable = true;
+    settings = {
+      daemonize = true;
+      show-failed-attempts = true;
+      image = "DP-1:~/Downloads/galaxy-nature-aesthetic-background-starry-sky-mountain-remixed-media.jpg";
+      scaling = "fill";
+      color = "000000";
+      indicator-radius = 50;
+      indicator-thickness = 10;
+      line-color = "282A36";
+      ring-color = "BD93F9";
+      inside-color = "282A36";
+      key-hl-color = "8BE9FD";
+      separator-color = "00000000";
+      text-color = "F8F8F2";
+      text-caps-lock-color = "";
+      line-ver-color = "BD93F9";
+      ring-ver-color = "BD93F9";
+      inside-ver-color = "282A36";
+      text-ver-color = "8BE9FD";
+      ring-wrong-color = "FF5555";
+      text-wrong-color = "FF5555";
+      inside-wrong-color = "282A36";
+      inside-clear-color = "282A36";
+      text-clear-color = "8BE9FD";
+      ring-clear-color = "8BE9FD";
+      line-clear-color = "8BE9FD";
+      line-wrong-color = "282A36";
+      bs-hl-color = "8BE9FD";
+    };
+  };
+
 }

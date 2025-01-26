@@ -160,4 +160,7 @@
   ];
 
   services.power-profiles-daemon.enable = true;
+
+  # needed for swaylock to work
+  security.pam.services.swaylock = { };
 }
