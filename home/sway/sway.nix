@@ -78,7 +78,7 @@
 
       extraConfigEarly = ''
         # give sway a little time to startup before starting kanshi.
-        exec sleep 5; systemctl --user start kanshi.service
+        exec_always sleep 2; systemctl --user start kanshi.service
         exec_always /run/wrappers/bin/gnome-keyring-daemon --start --daemonize
       '';
 
@@ -131,4 +131,28 @@
     };
   };
 
+  services.swayidle = {
+    enable = true;
+    timeouts = [
+      {
+        timeout = 180;
+        command = "${pkgs.swaylock}/bin/swaylock";
+      }
+      {
+        timeout = 185;
+        command = "${pkgs.sway}/bin/swaymsg 'output * dpms off'";
+        resumeCommand = "${pkgs.sway}/bin/swaymsg 'output * dpms on'";
+      }
+      {
+        timeout = 190;
+        command = "${pkgs.systemd}/bin/systemctl suspend";
+      }
+    ];
+    events = [
+      {
+        event = "before-sleep";
+        command = "${pkgs.swaylock}/bin/swaylock";
+      }
+    ];
+  };
 }
