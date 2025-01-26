@@ -39,6 +39,7 @@
     ./sway/sway.nix
     ./sway/kanshi.nix
     ./waybar/waybar.nix
+    ./fzf.nix
   ];
 
   home.sessionVariables = {
