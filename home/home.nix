@@ -22,8 +22,8 @@
   # misc
   home.packages = with pkgs; [
     gcc
-    xclip
     lazygit
+    wl-clipboard
     imagemagick
     tree
     noto-fonts
