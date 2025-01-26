@@ -72,6 +72,7 @@
           "${mod}+Left" = "resize shrink width 2";
           "${mod}+Up" = "resize shrink height 2";
           "${mod}+Down" = "resize grow height 2";
+          "${mod}+space" = "floating toggle";
         };
       };
 
@@ -93,6 +94,8 @@
         client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
         client.background        $base
 
+        # simple tab groups popup window
+        for_window [app_id="firefox" title=""] kill
       '';
     };
   programs.swaylock = {
