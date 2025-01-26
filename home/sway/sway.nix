@@ -93,9 +93,6 @@
         client.urgent            $peach    $base $peach $overlay0  $peach
         client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
         client.background        $base
-
-        # simple tab groups popup window
-        for_window [app_id="firefox" title=""] kill
       '';
     };
   programs.swaylock = {
