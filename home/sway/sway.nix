@@ -29,7 +29,7 @@
         keybindings = {
           "${mod}+Return" = "exec kitty";
           "${mod}+w" = "kill";
-          "Alt+space" = "exec ${pkgs.rofi}/bin/rofi -show combi -config ~/.config/rofi/config.rasi";
+          "Alt+space" = "exec fuzzel";
           "${mod}+h" = "focus left";
           "${mod}+j" = "focus down";
           "${mod}+k" = "focus up";
