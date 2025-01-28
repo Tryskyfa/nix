@@ -85,6 +85,9 @@
       extraConfig = ''
         input * repeat_delay 200
         input * repeat_rate 40
+        input 1133:50503:Logitech_USB_Receiver accel_profile flat
+        input * accel_profile adaptive
+
         ${builtins.readFile ./catppuccin-macchiato}
         # target                 title     bg    text   indicator  border
         client.focused           $lavender $base $text  $rosewater $lavender
