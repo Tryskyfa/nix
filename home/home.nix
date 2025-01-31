@@ -31,6 +31,7 @@
     btop
     pavucontrol
     fd
+    xournalpp
   ];
 
   imports = [
