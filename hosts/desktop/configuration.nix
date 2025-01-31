@@ -163,4 +163,7 @@
 
   # needed for swaylock to work
   security.pam.services.swaylock = { };
+
+  # needed for wacom tablet
+  hardware.opentabletdriver.enable = true;
 }
