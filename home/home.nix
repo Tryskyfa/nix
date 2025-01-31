@@ -43,6 +43,7 @@
     ./fzf.nix
     ./fuzzel.nix
     ./nextcloud.nix
+    ./nh.nix
   ];
 
   home.sessionVariables = {
