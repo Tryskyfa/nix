@@ -42,6 +42,7 @@
     ./waybar/waybar.nix
     ./fzf.nix
     ./fuzzel.nix
+    ./nextcloud.nix
   ];
 
   home.sessionVariables = {
