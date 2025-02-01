@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  stylix.targets.fzf.enable = false;
   programs.fzf = {
     enable = true;
     changeDirWidgetCommand = "fd --type d";

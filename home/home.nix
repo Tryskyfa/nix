@@ -32,6 +32,7 @@
     pavucontrol
     fd
     xournalpp
+    fastfetch
   ];
 
   imports = [

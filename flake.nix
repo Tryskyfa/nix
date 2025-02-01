@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix.url = "github:danth/stylix/release-24.11";
 
     plugin-lazydev.url = "github:folke/lazydev.nvim";
     plugin-lazydev.flake = false;
@@ -17,6 +18,7 @@
       self,
       nixpkgs,
       home-manager,
+      stylix,
       ...
     }:
     let
@@ -47,6 +49,8 @@
               home-manager.useUserPackages = true;
               home-manager.users.tryskyfa = import ./home/home.nix;
             }
+            stylix.nixosModules.stylix
+            ./stylix/stylix.nix
           ];
         };
       };

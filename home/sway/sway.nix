@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    rofi
+    swaybg
   ];
   wayland.windowManager.sway =
     let
@@ -80,6 +80,7 @@
         # give sway a little time to startup before starting kanshi.
         exec_always sleep 2; systemctl --user start kanshi.service
         exec_always /run/wrappers/bin/gnome-keyring-daemon --start --daemonize
+        exec_always swaybg -i ~/nix/stylix/background.jpg -m fill
       '';
 
       extraConfig = ''
@@ -87,17 +88,9 @@
         input * repeat_rate 40
         input 1133:50503:Logitech_USB_Receiver accel_profile flat
         input * accel_profile adaptive
-
-        ${builtins.readFile ./catppuccin-macchiato}
-        # target                 title     bg    text   indicator  border
-        client.focused           $lavender $base $text  $rosewater $lavender
-        client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
-        client.unfocused         $overlay0 $base $text  $rosewater $overlay0
-        client.urgent            $peach    $base $peach $overlay0  $peach
-        client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
-        client.background        $base
       '';
     };
+  stylix.targets.swaylock.enable = false;
   programs.swaylock = {
     enable = true;
     settings = {

@@ -5,6 +5,7 @@
   ...
 }:
 {
+  stylix.targets.fuzzel.enable = false;
   programs.fuzzel = {
     enable = true;
     settings = {
