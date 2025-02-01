@@ -36,6 +36,7 @@
     element-desktop
     nextcloud-client
     orca-slicer
+    gimp
   ];
 
   imports = [
