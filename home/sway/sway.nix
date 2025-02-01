@@ -96,7 +96,7 @@
     settings = {
       daemonize = true;
       show-failed-attempts = true;
-      image = "DP-1:~/Downloads/galaxy-nature-aesthetic-background-starry-sky-mountain-remixed-media.jpg";
+      image = "DP-1:~/Pictures/Wallpaper/galaxy-nature-aesthetic-blockscreen.jpg";
       scaling = "fill";
       color = "000000";
       indicator-radius = 50;
