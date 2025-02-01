@@ -33,6 +33,7 @@
     fd
     xournalpp
     fastfetch
+    element-desktop
   ];
 
   imports = [
