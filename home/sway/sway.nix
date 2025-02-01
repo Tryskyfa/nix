@@ -66,14 +66,14 @@
           "${mod}+Shift+9" = "move container to workspace number 9";
           "${mod}+Shift+0" = "move container to workspace number 10";
           "${mod}+Shift+r" = "reload";
-          "${mod}+p" = "focus prev";
-          "${mod}+n" = "focus next";
           "${mod}+Escape" = "exec swaylock";
           "${mod}+Right" = "resize grow width 2";
           "${mod}+Left" = "resize shrink width 2";
           "${mod}+Up" = "resize shrink height 2";
           "${mod}+Down" = "resize grow height 2";
           "${mod}+space" = "floating toggle";
+          "${mod}+p" =
+            "exec zathura ~/\"$(fd --base-directory ~ --type file --extension \".pdf\" | fuzzel -d --width 180)\"";
         };
       };
 

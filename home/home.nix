@@ -48,6 +48,7 @@
     ./fzf.nix
     ./fuzzel.nix
     ./nh.nix
+    ./zathura.nix
   ];
 
   home.sessionVariables = {
