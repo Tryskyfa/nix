@@ -35,6 +35,7 @@
     fastfetch
     element-desktop
     nextcloud-client
+    orca-slicer
   ];
 
   imports = [
