@@ -19,6 +19,7 @@
         terminal = "kitty";
         startup = [
           { command = "nm-applet"; }
+          { command = "nextcloud-client"; }
         ];
         bars = [
           {

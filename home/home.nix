@@ -34,6 +34,7 @@
     xournalpp
     fastfetch
     element-desktop
+    nextcloud-client
   ];
 
   imports = [
@@ -44,7 +45,6 @@
     ./waybar/waybar.nix
     ./fzf.nix
     ./fuzzel.nix
-    ./nextcloud.nix
     ./nh.nix
   ];
 
