@@ -74,6 +74,10 @@
           "${mod}+space" = "floating toggle";
           "${mod}+p" =
             "exec zathura ~/\"$(fd --base-directory ~ --type file --extension \".pdf\" | fuzzel -d --width 180)\"";
+          "${mod}+x" =
+            "exec xournalpp ~/\"$(fd --base-directory ~ --type file --extension \".xopp\" | fuzzel -d --width 180)\"";
+          "${mod}+Shift+x" =
+            "exec pdf=$(fd --base-directory ~ --type file --extension \".pdf\" | fuzzel -d --width 180) && dir=$(fd --base-directory ~ --type dir | fuzzel -d --width 180) && name=$(fuzzel -d -p \"New name: \" --lines 0) && cp ~/\"$pdf\" ~/\"$dir\"/\"$name\".pdf && xournalpp ~/\"$dir\"/\"$name\".pdf";
         };
       };
 
