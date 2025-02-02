@@ -44,6 +44,7 @@
           "${mod}+f" = "fullscreen toggle";
           "${mod}+e" = "layout toggle split";
           "${mod}+t" = "layout toggle split tabbed";
+          "${mod}+s" = "layout toggle split stacking";
           "${mod}+Shift+space" = "floating toggle";
           "${mod}+1" = "workspace number 1";
           "${mod}+2" = "workspace number 2";
