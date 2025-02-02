@@ -93,6 +93,7 @@
         input * repeat_rate 40
         input 1133:50503:Logitech_USB_Receiver accel_profile flat
         input * accel_profile adaptive
+        focus_follows_mouse no
       '';
     };
   stylix.targets.swaylock.enable = false;
