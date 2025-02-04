@@ -39,6 +39,7 @@
     gimp
     pom
     pferd
+    signal-desktop
   ];
 
   imports = [
