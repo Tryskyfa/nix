@@ -37,6 +37,7 @@
     nextcloud-client
     orca-slicer
     gimp
+    pom
   ];
 
   imports = [
