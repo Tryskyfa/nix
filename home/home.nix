@@ -38,6 +38,7 @@
     orca-slicer
     gimp
     pom
+    pferd
   ];
 
   imports = [
