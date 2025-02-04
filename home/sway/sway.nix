@@ -30,7 +30,7 @@
         keybindings = {
           "${mod}+Return" = "exec kitty";
           "${mod}+w" = "kill";
-          "Alt+space" = "exec fuzzel";
+          "Alt+space" = "exec fuzzel --terminal=kitty";
           "${mod}+h" = "focus left";
           "${mod}+j" = "focus down";
           "${mod}+k" = "focus up";
@@ -74,12 +74,13 @@
           "${mod}+Down" = "resize grow height 2";
           "${mod}+space" = "floating toggle";
           "${mod}+p" =
-            "exec zathura ~/\"$(fd --base-directory ~ --type file --extension \".pdf\" | fuzzel -d --width 180)\"";
+            "exec zathura ~/\"$(fd --base-directory ~ --type file --extension \".pdf\" | fuzzel -d --width 180 --prompt=)\"";
           "${mod}+x" =
             "exec xournalpp ~/\"$(fd --base-directory ~ --type file --extension \".xopp\" | fuzzel -d --width 180)\"";
           "${mod}+Shift+x" =
             "exec pdf=$(fd --base-directory ~ --type file --extension \".pdf\" | fuzzel -d --width 180) && dir=$(fd --base-directory ~ --type dir | fuzzel -d --width 180) && name=$(fuzzel -d -p \"New name: \" --lines 0) && cp ~/\"$pdf\" ~/\"$dir\"/\"$name\".pdf && xournalpp ~/\"$dir\"/\"$name\".pdf";
-          "${mod}+v" = "exec cliphist list | fuzzel -d --lines 20 --width 120 | cliphist decode | wl-copy";
+          "${mod}+v" =
+            "exec cliphist list | fuzzel -d --lines 20 --width 120 --prompt= | cliphist decode | wl-copy";
           "${mod}+Shift+v" = "exec cliphist wipe";
         };
       };
