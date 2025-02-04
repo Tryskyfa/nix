@@ -51,6 +51,7 @@
     ./fuzzel.nix
     ./nh.nix
     ./zathura.nix
+    ./cliphist.nix
   ];
 
   home.sessionVariables = {
