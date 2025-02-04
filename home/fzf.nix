@@ -4,7 +4,7 @@
   programs.fzf = {
     enable = true;
     changeDirWidgetCommand = "fd --type d";
-    fileWidgetCommand = "fd --type f";
+    fileWidgetCommand = "fd --type file --base-directory ~ --absolute-path";
     colors = {
       fg = "-1";
       bg = "-1";
