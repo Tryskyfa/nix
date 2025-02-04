@@ -11,5 +11,10 @@
       name = "Bibata-Modern-Classic";
       size = 22;
     };
+
+    fonts.monospace = {
+      name = "DejaVuSansMNerdFont-Regular";
+      package = pkgs.nerdfonts;
+    };
   };
 }
