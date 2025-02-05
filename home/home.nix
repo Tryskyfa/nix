@@ -40,6 +40,8 @@
     pom
     pferd
     signal-desktop
+    grim
+    slurp
   ];
 
   imports = [

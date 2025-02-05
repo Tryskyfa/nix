@@ -82,6 +82,7 @@
           "${mod}+v" =
             "exec cliphist list | fuzzel -d --lines 20 --width 120 --prompt=\"󰅍 \" | cliphist decode | wl-copy";
           "${mod}+Shift+v" = "exec cliphist wipe";
+          "${mod}+Shift+s" = "exec grim -g \"$(slurp)\" - | wl-copy";
         };
       };
 
