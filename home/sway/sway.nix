@@ -90,6 +90,7 @@
         exec_always sleep 2; systemctl --user start kanshi.service
         exec_always /run/wrappers/bin/gnome-keyring-daemon --start --daemonize
         exec_always swaybg -i ~/nix/stylix/background.jpg -m fill
+        exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
       '';
 
       extraConfig = ''
