@@ -61,8 +61,8 @@
         capslock = true;
         format = "{name} {icon}";
         format-icons = {
-          locked = "";
-          unlocked = "";
+          locked = " ";
+          unlocked = " ";
         };
       };
       "sway/mode" = {
@@ -73,7 +73,7 @@
         show-empty = false;
         format-icons = [
           ""
-          ""
+          " "
         ];
         tooltip = true;
         tooltip-format = "{app}: {title}";
@@ -107,8 +107,8 @@
       idle_inhibitor = {
         format = "{icon}";
         format-icons = {
-          activated = "";
-          deactivated = "";
+          activated = "󰒳 ";
+          deactivated = "󰒲 ";
         };
       };
       tray = {
@@ -117,7 +117,7 @@
       };
       clock = {
         timezone = "Europe/Berlin";
-        format = "{:%F %R }";
+        format = "{:%F %R  }";
         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         calendar = {
           mode = "year";
@@ -143,11 +143,11 @@
 
       };
       cpu = {
-        format = "{usage}% ";
+        format = "{usage}%  ";
         tooltip = false;
       };
       memory = {
-        format = "{}% ";
+        format = "{}%  ";
       };
       temperature = {
         thermal-zone = 1;
@@ -164,15 +164,15 @@
         # "device": "acpi_video1",
         format = "{percent}% {icon}";
         format-icons = [
-          ""
-          ""
-          ""
-          ""
-          ""
-          ""
-          ""
-          ""
-          ""
+          " "
+          " "
+          " "
+          " "
+          " "
+          " "
+          " "
+          " "
+          " "
         ];
       };
       battery = {
@@ -189,11 +189,11 @@
         # "format-good": "", // An empty format will hide the module
         # "format-full": "",
         format-icons = [
-          ""
-          ""
-          ""
-          ""
-          ""
+          " "
+          " "
+          " "
+          " "
+          " "
         ];
       };
       power-profiles-daemon = {
@@ -203,8 +203,8 @@
         format-icons = {
           default = "";
           performance = "";
-          balanced = "";
-          power-saver = "";
+          balanced = " ";
+          power-saver = " ";
         };
       };
       network = {
