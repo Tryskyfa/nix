@@ -42,6 +42,7 @@
     signal-desktop
     grim
     slurp
+    llvmPackages_19.clang-tools
   ];
 
   imports = [

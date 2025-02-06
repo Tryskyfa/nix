@@ -3,8 +3,8 @@ local on_attach = function(_, bufnr)
     vim.keymap.set("n", keys, func, { buffer = bufnr })
   end
 
-  bufmap("<leader>r", vim.lsp.buf.rename)
-  bufmap("<leader>a", vim.lsp.buf.code_action)
+  bufmap("<leader>cr", vim.lsp.buf.rename)
+  bufmap("<leader>ca", vim.lsp.buf.code_action)
 
   bufmap("gd", vim.lsp.buf.definition)
   bufmap("gD", vim.lsp.buf.declaration)
@@ -20,6 +20,26 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
     vim.lsp.buf.format()
   end, {})
+end
+
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local create_format_autocommand = function(client, bufnr, name)
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format({
+          async = false,
+          bufnr = bufnr,
+          filter = function(client_filter)
+            return client_filter.name == name
+          end,
+        })
+      end,
+    })
+  end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -48,4 +68,26 @@ require("lazydev").setup({
 require("lspconfig").nil_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
+})
+
+require("lspconfig").clangd.setup({
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    create_format_autocommand(client, bufnr, "clangd")
+    vim.keymap.set("n", "<leader>ch", "<cmd>ClangdSwitchSourceHeader<cr>", { buffer = bufnr })
+  end,
+  capabilities = capabilities,
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--clang-tidy",
+    "--header-insertion=iwyu",
+    "--completion-style=detailed",
+    "--function-arg-placeholders",
+  },
+  init_options = {
+    usePlaceholders = true,
+    completeUnimported = true,
+    clangdFileStatus = true,
+  },
 })
