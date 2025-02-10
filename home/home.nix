@@ -45,6 +45,7 @@
     llvmPackages_19.clang-tools
     gnumake
     unzip
+    qrencode
   ];
 
   imports = [
