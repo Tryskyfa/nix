@@ -44,6 +44,7 @@
     slurp
     llvmPackages_19.clang-tools
     gnumake
+    unzip
   ];
 
   imports = [
