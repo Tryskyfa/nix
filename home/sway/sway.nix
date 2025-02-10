@@ -83,6 +83,7 @@
             "exec cliphist list | fuzzel -d --lines 20 --width 120 --prompt=\"󰅍 \" | cliphist decode | wl-copy";
           "${mod}+Shift+v" = "exec cliphist wipe";
           "${mod}+Shift+s" = "exec grim -g \"$(slurp)\" - | wl-copy";
+          "${mod}+b" = "border toggle pixel normal";
         };
       };
 
@@ -100,6 +101,7 @@
         input 1133:50503:Logitech_USB_Receiver accel_profile flat
         input * accel_profile adaptive
         focus_follows_mouse no
+        default_border pixel
       '';
     };
   stylix.targets.swaylock.enable = false;
