@@ -59,6 +59,7 @@
     ./nh.nix
     ./zathura.nix
     ./cliphist.nix
+    ./yazi.nix
   ];
 
   home.sessionVariables = {
@@ -85,6 +86,7 @@
       ];
       "image/png" = [ "firefox.desktop" ];
       "image/jpg" = [ "firefox.desktop" ];
+      "text/plain" = [ "nvim.desktop" ];
     };
   };
 }

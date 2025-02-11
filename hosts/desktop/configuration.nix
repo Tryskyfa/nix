@@ -123,7 +123,6 @@
   environment.systemPackages = with pkgs; [
     vim
     neovim
-    yazi
     tmux
     kitty
     git
