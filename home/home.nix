@@ -71,4 +71,20 @@
     # used by gnome-keyring, there is probably a better solution but this works
     SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
   };
+
+  xdg.desktopEntries.zathura = {
+    name = "zathura";
+    exec = "${pkgs.zathura}/bin/zathura";
+  };
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "application/pdf" = [
+        "zathura.desktop"
+        "firefox.desktop"
+      ];
+      "image/png" = [ "firefox.desktop" ];
+      "image/jpg" = [ "firefox.desktop" ];
+    };
+  };
 }
