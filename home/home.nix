@@ -48,6 +48,7 @@
     qrencode
     exiftool
     rofimoji
+    wev
   ];
 
   imports = [
