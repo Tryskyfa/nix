@@ -47,6 +47,7 @@
     unzip
     qrencode
     exiftool
+    rofimoji
   ];
 
   imports = [

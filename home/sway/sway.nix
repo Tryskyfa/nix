@@ -84,6 +84,7 @@
           "${mod}+Shift+v" = "exec cliphist wipe";
           "${mod}+Shift+s" = "exec grim -g \"$(slurp)\" - | wl-copy";
           "${mod}+b" = "border toggle pixel normal";
+          "${mod}+period" = "exec rofimoji --selector fuzzel --selector-args=\"--width 120\"";
         };
       };
 
