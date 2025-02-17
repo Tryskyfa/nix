@@ -50,6 +50,7 @@
     rofimoji
     wev
     diffpdf
+    bitwarden
   ];
 
   imports = [
