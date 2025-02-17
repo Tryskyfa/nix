@@ -49,6 +49,7 @@
     exiftool
     rofimoji
     wev
+    diffpdf
   ];
 
   imports = [
