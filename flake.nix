@@ -53,6 +53,25 @@
             ./stylix/stylix.nix
           ];
         };
+        laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit system; };
+
+          modules = [
+            ./hosts/laptop/configuration.nix
+            # needed to enable sway on a user level
+            ./nixos/user_wm.nix
+            ./nixos/gnome-keyring.nix
+            ./nixos/greeter.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.tryskyfa = import ./home/home.nix;
+            }
+            stylix.nixosModules.stylix
+            ./stylix/stylix.nix
+          ];
+        };
       };
     };
 }
