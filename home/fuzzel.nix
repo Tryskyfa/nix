@@ -18,6 +18,10 @@
         selection-text = "f8f8f2ff";
         border = "bd93f9ff";
       };
+      main = {
+        prompt = "\"  \"";
+        dpi-aware = "no";
+      };
     };
   };
 }
