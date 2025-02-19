@@ -51,6 +51,7 @@
     wev
     diffpdf
     bitwarden
+    usbutils
   ];
 
   imports = [
