@@ -161,18 +161,18 @@
         ];
       };
       backlight = {
-        # "device": "acpi_video1",
+        device = "amdgpu_bl1";
         format = "{percent}% {icon}";
         format-icons = [
-          " "
-          " "
-          " "
-          " "
-          " "
-          " "
-          " "
-          " "
-          " "
+          ""
+          ""
+          ""
+          ""
+          ""
+          ""
+          ""
+          ""
+          ""
         ];
       };
       battery = {
@@ -209,10 +209,10 @@
       };
       network = {
         # "interface": "wlp2*", // (Optional) To force the use of this interface
-        format-wifi = "{essid} ({signalStrength}%) ";
-        format-ethernet = "{ipaddr}/{cidr} ";
-        tooltip-format = "{ifname} via {gwaddr} ";
-        format-linked = "{ifname} (No IP) ";
+        format-wifi = "{essid} ({signalStrength}%)  ";
+        format-ethernet = "{ipaddr}/{cidr}  ";
+        tooltip-format = "{ifname} via {gwaddr}  ";
+        format-linked = "{ifname} (No IP)  ";
         format-disconnected = "Disconnected ⚠";
         format-alt = "{ifname}: {ipaddr}/{cidr}";
       };
@@ -220,8 +220,8 @@
         # "scroll-step": 1, // %, can be a float
         format = "{volume}% {icon} {format_source}";
         format-bluetooth = "{volume}% {icon} {format_source}";
-        format-bluetooth-muted = " {icon} {format_source}";
-        format-muted = " {format_source}";
+        format-bluetooth-muted = "󰝟 {icon} {format_source}";
+        format-muted = "󰝟 {format_source}";
         format-source = "{volume}% ";
         format-source-muted = "";
         format-icons = {

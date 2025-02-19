@@ -75,7 +75,9 @@ button:hover {
 }
 
 #clock,
+#battery,
 #keyboard-state,
+#backlight,
 #power-profiles-daemon,
 #pulseaudio,
 #network,
@@ -105,6 +107,11 @@ button:hover {
 }
 
 #clock {
+    background-color: @orange;
+    color: @background-darker;
+}
+
+#battery {
     background-color: @orange;
     color: @background-darker;
 }
@@ -202,7 +209,11 @@ label:focus {
 #keyboard-state {
     background-color: @green;
     color: @background-darker;
-    /* min-width: 40px; */
+}
+
+#backlight {
+    background-color: @green;
+    color: @background-darker;
 }
 
 #scratchpad {
