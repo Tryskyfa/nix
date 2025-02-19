@@ -168,6 +168,7 @@
       CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
 
       START_CHARGE_THRESH_BAT0 = 80; # 80 and below it starts to charge
+      STOP_CHARGE_THRESH_BAT0 = 95;
     };
   };
 }
