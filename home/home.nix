@@ -43,6 +43,10 @@
     grim
     slurp
     llvmPackages_19.clang-tools
+    llvmPackages_19.llvm-manpages
+    llvmPackages_19.clang-manpages
+    man-pages-posix
+    man-pages
     gnumake
     unzip
     qrencode
