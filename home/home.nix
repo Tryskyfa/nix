@@ -57,6 +57,7 @@
     bitwarden
     usbutils
     R
+    onlyoffice-desktopeditors
   ];
 
   imports = [
