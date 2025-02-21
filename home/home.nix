@@ -58,6 +58,7 @@
     usbutils
     R
     onlyoffice-desktopeditors
+    openvpn
   ];
 
   imports = [
