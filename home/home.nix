@@ -59,6 +59,8 @@
     R
     onlyoffice-desktopeditors
     openvpn
+    cifs-utils
+    samba
   ];
 
   imports = [
