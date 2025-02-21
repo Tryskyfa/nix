@@ -56,6 +56,7 @@
     diffpdf
     bitwarden
     usbutils
+    R
   ];
 
   imports = [
