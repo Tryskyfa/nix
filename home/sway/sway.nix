@@ -108,7 +108,7 @@
         input * repeat_rate 40
         input 1133:50503:Logitech_USB_Receiver accel_profile flat
         input * accel_profile adaptive
-        input touchpad natural_scroll disable
+        input type:touchpad natural_scroll enable
         focus_follows_mouse no
         default_border pixel
       '';
@@ -119,7 +119,7 @@
     settings = {
       daemonize = true;
       show-failed-attempts = true;
-      image = "DP-1:~/Pictures/Wallpaper/galaxy-nature-aesthetic-blockscreen.jpg";
+      image = "~/Pictures/Wallpaper/galaxy-nature-aesthetic-blockscreen.jpg";
       scaling = "fill";
       color = "000000";
       indicator-radius = 50;
