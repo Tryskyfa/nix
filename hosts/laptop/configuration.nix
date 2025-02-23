@@ -172,4 +172,6 @@
       STOP_CHARGE_THRESH_BAT0 = 95;
     };
   };
+
+  security.pki.certificateFiles = [ "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt" ];
 }
