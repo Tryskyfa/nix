@@ -43,6 +43,7 @@
             ./nixos/user_wm.nix
             ./nixos/gnome-keyring.nix
             ./nixos/greeter.nix
+            ./nixos/xdg.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
