@@ -61,6 +61,7 @@
     openvpn
     cifs-utils
     samba
+    discord
   ];
 
   imports = [

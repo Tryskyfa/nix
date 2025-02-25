@@ -128,7 +128,6 @@
     git
     git-doc
     stow
-    discord
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
