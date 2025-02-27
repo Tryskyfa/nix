@@ -1,5 +1,10 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}:
+{
+  stylix.targets.neovim.enable = false;
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -19,85 +24,30 @@
     ];
 
     plugins = with pkgs.vimPlugins; [
-      {
-        plugin = nvim-lspconfig;
-        type = "lua";
-        config = builtins.readFile ./plugin/lsp.lua;
-      }
-      {
-        plugin = comment-nvim;
-        type = "lua";
-        config = "require(\"Comment\").setup()";
-      }
-      {
-        plugin = nvim-cmp;
-        type = "lua";
-        config = builtins.readFile ./plugin/cmp.lua;
-      }
-      {
-        plugin = telescope-nvim;
-        type = "lua";
-        config = builtins.readFile ./plugin/telescope.lua;
-      }
-      telescope-fzf-native-nvim
-      cmp_luasnip
+      bufferline-nvim
       cmp-nvim-lsp
+      cmp_luasnip
+      comment-nvim
       friendly-snippets
-      {
-        plugin = lualine-nvim;
-        type = "lua";
-        config = builtins.readFile ./plugin/lualine.lua;
-      }
-      nvim-web-devicons
-      luasnip
+      gitsigns-nvim
       lazydev-nvim
-      {
-        plugin = nvim-treesitter.withAllGrammars;
-        type = "lua";
-        config = builtins.readFile ./plugin/treesitter.lua;
-      }
-      {
-        plugin = tokyonight-nvim;
-        type = "lua";
-        config = builtins.readFile ./plugin/tokyonight.lua;
-      }
+      lualine-nvim
+      luasnip
+      mini-surround
+      neo-tree-nvim
+      none-ls-nvim
+      nvim-cmp
+      nvim-lspconfig
+      nvim-treesitter.withAllGrammars
+      nvim-web-devicons
+      snacks-nvim
+      telescope-fzf-native-nvim
+      telescope-nvim
+      tokyonight-nvim
       vim-tmux-navigator
-      {
-        plugin = neo-tree-nvim;
-        type = "lua";
-        config = builtins.readFile ./plugin/neo-tree.lua;
-      }
-      {
-        plugin = bufferline-nvim;
-        type = "lua";
-        config = builtins.readFile ./plugin/bufferline.lua;
-      }
-      {
-        plugin = snacks-nvim;
-        type = "lua";
-        config = builtins.readFile ./plugin/snacks.lua;
-      }
-      {
-        plugin = none-ls-nvim;
-        type = "lua";
-        config = builtins.readFile ./plugin/none-ls.lua;
-      }
-      {
-        plugin = gitsigns-nvim;
-        type = "lua";
-        config = builtins.readFile ./plugin/gitsigns.lua;
-      }
-      {
-        plugin = mini-surround;
-        type = "lua";
-        config = builtins.readFile ./plugin/mini-surround.lua;
-      }
     ];
-
-    extraLuaConfig = ''
-      ${builtins.readFile ./options.lua}
-      ${builtins.readFile ./keymaps.lua}
-      ${builtins.readFile ./autocmds.lua}
-    '';
   };
+  home.activation.linkMyFiles = config.lib.dag.entryAfter [ "writeBoundary" ] ''
+    ln -sf -T /home/tryskyfa/nix/home/nvim/config/ ~/.config/nvim
+  '';
 }
