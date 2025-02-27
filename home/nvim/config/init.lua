@@ -4,6 +4,7 @@ require("core.keymaps")
 require("core.autocmds")
 
 -- plugins
+require("plugins.tokyonight")
 require("plugins.bufferline")
 require("plugins.cmp")
 require("plugins.comment")
@@ -15,5 +16,4 @@ require("plugins.neo-tree")
 require("plugins.none-ls")
 require("plugins.snacks")
 require("plugins.telescope")
-require("plugins.tokyonight")
 require("plugins.treesitter")
