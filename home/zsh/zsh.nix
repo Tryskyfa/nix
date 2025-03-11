@@ -26,6 +26,7 @@
       "f" = "firefox";
       # do I need this one really?
       "ts" = "tmux source ~/.config/tmux/tmux.conf";
+      "e" = "eza";
     };
 
     initExtra = ''

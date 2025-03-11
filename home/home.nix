@@ -25,7 +25,6 @@
     lazygit
     wl-clipboard
     imagemagick
-    tree
     noto-fonts
     htop
     btop
@@ -76,6 +75,7 @@
     ./zathura.nix
     ./cliphist.nix
     ./yazi.nix
+    ./eza.nix
   ];
 
   home.sessionVariables = {
