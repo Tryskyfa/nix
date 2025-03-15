@@ -113,6 +113,10 @@
         input type:touchpad natural_scroll enable
         focus_follows_mouse no
         default_border pixel
+        bindgesture swipe:3:left focus left
+        bindgesture swipe:3:right focus right
+        bindgesture swipe:3:down focus down
+        bindgesture swipe:3:up focus up
       '';
     };
   stylix.targets.swaylock.enable = false;
