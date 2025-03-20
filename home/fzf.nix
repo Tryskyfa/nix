@@ -19,5 +19,8 @@
       spinner = "#ff87d7";
     };
     tmux.enableShellIntegration = true;
+    tmux.shellIntegrationOptions = [
+      "-p 50%"
+    ];
   };
 }
