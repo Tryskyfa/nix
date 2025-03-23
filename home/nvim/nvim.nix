@@ -12,15 +12,20 @@
     vimdiffAlias = true;
 
     extraPackages = with pkgs; [
+      # language servers
       lua-language-server
-      wl-clipboard
       nil
-      ripgrep
-      fd
-      lazygit
+      pyright
+
       # formater
       nixfmt-rfc-style
       stylua
+
+      # extra
+      fd
+      lazygit
+      ripgrep
+      wl-clipboard
     ];
 
     plugins = with pkgs.vimPlugins; [
