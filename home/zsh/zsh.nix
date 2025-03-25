@@ -30,7 +30,7 @@
 
     initExtra = ''
       bindkey "^N" clear-screen
-      bindkey "^M" autosuggest-accept
+      bindkey "^P" autosuggest-accept
 
       # for yazi tui file explorer
       function y() {
