@@ -93,10 +93,6 @@ require("lspconfig").clangd.setup({
 })
 
 require("lspconfig").pyright.setup({
-  on_attach = function(client, bufnr)
-    on_attach(client, bufnr)
-    create_format_autocommand(client, bufnr, "clangd")
-    vim.keymap.set("n", "<leader>ch", "<cmd>ClangdSwitchSourceHeader<cr>", { buffer = bufnr })
-  end,
+  on_attach = on_attach,
   capabilities = capabilities,
 })
