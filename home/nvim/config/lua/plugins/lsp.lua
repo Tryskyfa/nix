@@ -96,3 +96,11 @@ require("lspconfig").pyright.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
+
+require("lspconfig").ruff.setup({
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    create_format_autocommand(client, bufnr, "ruff")
+  end,
+  capabilities = capabilities,
+})

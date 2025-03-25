@@ -20,6 +20,7 @@
       # formater
       nixfmt-rfc-style
       stylua
+      ruff
 
       # extra
       fd
