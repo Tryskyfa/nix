@@ -94,6 +94,7 @@
           "XF86AudioMicMute" = "exec pactl set-sink-input-mute @DEFAULT_SINK@ toggle";
           "XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
           "XF86MonBrightnessUp" = "exec brightnessctl set 5%+";
+          "XF86AudioPlay" = "exec playerctl play-pause";
         };
       };
 

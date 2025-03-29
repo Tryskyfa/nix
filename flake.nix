@@ -44,6 +44,7 @@
             ./nixos/gnome-keyring.nix
             ./nixos/greeter.nix
             ./nixos/xdg.nix
+            ./nixos/playerctl.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -65,6 +66,7 @@
             ./nixos/greeter.nix
             ./nixos/xdg.nix
             ./nixos/bluetooth.nix
+            ./nixos/playerctl.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
