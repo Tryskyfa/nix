@@ -61,6 +61,7 @@
     cifs-utils
     samba
     discord
+    feh
   ];
 
   imports = [
@@ -100,8 +101,8 @@
         "zathura.desktop"
         "firefox.desktop"
       ];
-      "image/png" = [ "firefox.desktop" ];
-      "image/jpg" = [ "firefox.desktop" ];
+      "image/png" = [ "feh.desktop" ];
+      "image/jpg" = [ "feh.desktop" ];
       "text/plain" = [ "nvim.desktop" ];
     };
   };
