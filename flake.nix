@@ -45,6 +45,7 @@
             ./nixos/greeter.nix
             ./nixos/xdg.nix
             ./nixos/playerctl.nix
+            ./nixos/local_time.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
