@@ -62,6 +62,7 @@
     samba
     discord
     feh
+    gnome-sound-recorder
   ];
 
   imports = [
