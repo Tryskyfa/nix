@@ -95,6 +95,7 @@
           "XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
           "XF86MonBrightnessUp" = "exec brightnessctl set 5%+";
           "XF86AudioPlay" = "exec playerctl play-pause";
+          "XF86PickupPhone" = "exec playerctl play-pause";
         };
       };
 
