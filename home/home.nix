@@ -63,6 +63,7 @@
     discord
     feh
     gnome-sound-recorder
+    chromium
   ];
 
   imports = [
