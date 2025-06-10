@@ -14,7 +14,7 @@
 
     fonts.monospace = {
       name = "DejaVuSansMNerdFont-Regular";
-      package = pkgs.nerdfonts;
+      package = pkgs.nerd-fonts.dejavu-sans-mono;
     };
   };
 }
