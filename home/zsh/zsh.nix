@@ -28,7 +28,7 @@
       "ts" = "tmux source ~/.config/tmux/tmux.conf";
     };
 
-    initExtra = ''
+    initContent = ''
       bindkey "^N" clear-screen
       bindkey "^P" autosuggest-accept
 
