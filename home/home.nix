@@ -64,6 +64,7 @@
     feh
     gnome-sound-recorder
     chromium
+    pdftk
   ];
 
   imports = [
