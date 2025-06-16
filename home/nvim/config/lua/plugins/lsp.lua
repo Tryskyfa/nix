@@ -5,6 +5,7 @@ local on_attach = function(_, bufnr)
 
   bufmap("<leader>cr", vim.lsp.buf.rename)
   bufmap("<leader>ca", vim.lsp.buf.code_action)
+  bufmap("<leader>cd", vim.diagnostic.open_float)
 
   bufmap("gd", vim.lsp.buf.definition)
   bufmap("gD", vim.lsp.buf.declaration)
