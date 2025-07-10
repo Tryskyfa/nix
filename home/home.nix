@@ -65,6 +65,7 @@
     gnome-sound-recorder
     chromium
     pdftk
+    typst
   ];
 
   imports = [

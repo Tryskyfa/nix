@@ -105,3 +105,11 @@ require("lspconfig").ruff.setup({
   end,
   capabilities = capabilities,
 })
+
+require("lspconfig").tinymist.setup({
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    create_format_autocommand(client, bufnr, "tinymist")
+  end,
+  capabilities = capabilities,
+})

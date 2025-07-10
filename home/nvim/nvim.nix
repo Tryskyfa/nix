@@ -16,6 +16,7 @@
       lua-language-server
       nil
       pyright
+      tinymist
 
       # formater
       nixfmt-rfc-style
