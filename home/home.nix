@@ -66,6 +66,7 @@
     chromium
     pdftk
     typst
+    ghc
   ];
 
   imports = [

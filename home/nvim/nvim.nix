@@ -17,6 +17,7 @@
       nil
       pyright
       tinymist
+      haskell-language-server
 
       # formater
       nixfmt-rfc-style

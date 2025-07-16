@@ -113,3 +113,12 @@ require("lspconfig").tinymist.setup({
   end,
   capabilities = capabilities,
 })
+
+vim.lsp.enable("hls")
+vim.lsp.config("hls", {
+  filetypes = { "haskell", "lhaskell", "cabal" },
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    create_format_autocommand(client, bufnr, "hls")
+  end,
+})
