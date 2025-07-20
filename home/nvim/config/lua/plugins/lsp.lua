@@ -93,20 +93,25 @@ require("lspconfig").clangd.setup({
   },
 })
 
-require("lspconfig").pyright.setup({
+vim.lsp.enable("pyright")
+vim.lsp.config("pyright", {
   on_attach = on_attach,
-  capabilities = capabilities,
 })
 
-require("lspconfig").ruff.setup({
+vim.lsp.enable("ruff")
+vim.lsp.config("ruff", {
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     create_format_autocommand(client, bufnr, "ruff")
   end,
-  capabilities = capabilities,
 })
 
 require("lspconfig").tinymist.setup({
+  settings = {
+    formatterMode = "typstyle",
+    exportPdf = "onType",
+    semanticTokens = "disable",
+  },
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     create_format_autocommand(client, bufnr, "tinymist")
