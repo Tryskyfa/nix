@@ -67,6 +67,7 @@
     pdftk
     typst
     ghc
+    wl-mirror
   ];
 
   imports = [

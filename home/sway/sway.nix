@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   home.packages = with pkgs; [
     swaybg
@@ -10,7 +15,7 @@
     {
       enable = true;
       wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
-      config = rec {
+      config = {
         modifier = mod;
         # Use kitty as default terminal
         terminal = "kitty";
@@ -93,6 +98,7 @@
           "XF86MonBrightnessUp" = "exec brightnessctl set 5%+";
           "XF86AudioPlay" = "exec playerctl play-pause";
           "XF86PickupPhone" = "exec playerctl play-pause";
+          "XF86Display" = "exec wl-present mirror";
         };
       };
 
