@@ -95,9 +95,10 @@
     SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
   };
 
-  xdg.desktopEntries.zathura = {
-    name = "zathura";
-    exec = "${pkgs.zathura}/bin/zathura";
+  xdg.desktopEntries.feh = {
+    name = "feh";
+    exec = "${pkgs.feh}/bin/feh";
+    icon = "image";
   };
   xdg.mimeApps = {
     enable = true;
