@@ -9,9 +9,6 @@
     in
     {
       enable = true;
-      extraOptions = [
-        "--unsupported-gpu"
-      ];
       wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
       config = rec {
         modifier = mod;
