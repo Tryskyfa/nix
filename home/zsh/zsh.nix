@@ -1,6 +1,5 @@
 {
-  config,
-  pkgs,
+  lib,
   ...
 }:
 {
@@ -28,24 +27,40 @@
       "ts" = "tmux source ~/.config/tmux/tmux.conf";
     };
 
-    initContent = ''
-      bindkey "^N" clear-screen
-      bindkey "^P" autosuggest-accept
+    initContent =
+      let
+        zshConfigDefault = ''
+          bindkey "^N" clear-screen
+          bindkey "^P" autosuggest-accept
 
-      # for yazi tui file explorer
-      function y() {
-        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-        yazi "$@" --cwd-file="$tmp"
-        if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-          builtin cd -- "$cwd"
-        fi
-        rm -f -- "$tmp"
-      }
+          # for yazi tui file explorer
+          function y() {
+            local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+            yazi "$@" --cwd-file="$tmp"
+            if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+              builtin cd -- "$cwd"
+            fi
+            rm -f -- "$tmp"
+          }
 
-      # for powerlevel10k
-      [[ ! -f ${./p10k.zsh} ]] || source ${./p10k.zsh}
-      autoload -Uz promptinit && promptinit && prompt powerlevel10k
-    '';
+          # for powerlevel10k
+          [[ ! -f ${./p10k.zsh} ]] || source ${./p10k.zsh}
+          autoload -Uz promptinit && promptinit && prompt powerlevel10k
+        '';
+        zshConfigLate = lib.mkAfter ''
+          if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+            if tmux list-sessions > /dev/null; then
+              exec tmux attach
+            else
+              exec tmux
+            fi
+          fi
+        '';
+      in
+      lib.mkMerge [
+        zshConfigDefault
+        zshConfigLate
+      ];
   };
 
   programs.direnv = {
