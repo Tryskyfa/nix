@@ -69,6 +69,7 @@
     ghc
     wl-mirror
     anki
+    rnote
   ];
 
   imports = [
