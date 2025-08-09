@@ -68,6 +68,7 @@
     typst
     ghc
     wl-mirror
+    anki
   ];
 
   imports = [
