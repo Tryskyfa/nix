@@ -118,6 +118,7 @@
       "image/png" = [ "feh.desktop" ];
       "image/jpeg" = [ "feh.desktop" ];
       "text/plain" = [ "nvim.desktop" ];
+      "application/x-xopp" = [ "com.github.xournalpp.xournalpp.desktop" ];
       "x-scheme-handler/http" = [ "firefox.desktop" ];
       "x-scheme-handler/https" = [ "firefox.desktop" ];
       "x-scheme-handler/chrome" = [ "firefox.desktop" ];
