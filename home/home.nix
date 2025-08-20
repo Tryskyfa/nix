@@ -100,7 +100,7 @@
 
   xdg.desktopEntries.feh = {
     name = "feh";
-    exec = "${pkgs.feh}/bin/feh %f";
+    exec = "${pkgs.feh}/bin/feh %F";
     icon = "image";
     terminal = false;
     type = "Application";
