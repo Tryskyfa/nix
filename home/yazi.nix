@@ -17,12 +17,22 @@
             block = false;
           }
         ];
+        image = [
+          {
+            run = "${pkgs.feh}/bin/feh \"$@\"";
+            block = false;
+          }
+        ];
       };
       open = {
         prepend_rules = [
           {
             name = "*.xopp";
             use = "xopp";
+          }
+          {
+            mime = "image/*";
+            use = "image";
           }
         ];
       };
