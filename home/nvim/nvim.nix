@@ -18,6 +18,7 @@
       pyright
       tinymist
       haskell-language-server
+      sqls
 
       # formater
       nixfmt-rfc-style

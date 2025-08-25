@@ -127,3 +127,11 @@ vim.lsp.config("hls", {
     create_format_autocommand(client, bufnr, "hls")
   end,
 })
+
+vim.lsp.enable("sqls")
+vim.lsp.config("sqls", {
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    create_format_autocommand(client, bufnr, "sqls")
+  end,
+})
