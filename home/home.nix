@@ -70,6 +70,7 @@
     wl-mirror
     anki
     rnote
+    python313
   ];
 
   imports = [
