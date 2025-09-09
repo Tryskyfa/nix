@@ -82,7 +82,7 @@
           "${mod}+Shift+x" =
             "exec pdf=$(fd --base-directory ~ --type file --extension \".pdf\" | fuzzel -d --width 180 --prompt=\"󰈦 \") && dir=$(fd --base-directory ~ --type dir | fuzzel -d --width 180) && name=$(fuzzel -d -p \"New name: \" --lines 0) && cp ~/\"$pdf\" ~/\"$dir\"/\"$name\".pdf && xournalpp ~/\"$dir\"/\"$name\".pdf";
           "${mod}+v" =
-            "exec cliphist list | fuzzel -d --lines 20 --width 120 --prompt=\"󰅍 \" | cliphist decode | wl-copy";
+            "exec cliphist list | fuzzel -d --lines 20 --width 120 --prompt=\"󰅍 \" --with-nth 2 | cliphist decode | wl-copy";
           "${mod}+Shift+v" = "exec cliphist wipe";
           "${mod}+Shift+s" = "exec grim -g \"$(slurp)\" - | wl-copy";
           "${mod}+b" = "border toggle pixel normal";
