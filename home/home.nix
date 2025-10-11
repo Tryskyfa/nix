@@ -71,6 +71,7 @@
     anki
     rnote
     python313
+    inkscape
   ];
 
   imports = [
