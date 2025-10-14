@@ -56,6 +56,7 @@
       vim-tmux-navigator
       persistence-nvim
       which-key-nvim
+      nvim-autopairs
     ];
   };
   home.activation.linkMyFiles = config.lib.dag.entryAfter [ "writeBoundary" ] ''
