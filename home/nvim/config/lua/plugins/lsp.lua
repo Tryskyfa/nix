@@ -7,7 +7,7 @@ local on_attach = function(_, bufnr)
   bufmap("<leader>ca", vim.lsp.buf.code_action, "code_action")
   bufmap("<leader>cd", vim.diagnostic.open_float, "code diagnostic")
 
-  bufmap("gd", vim.lsp.buf.definition, "go definition")
+  bufmap("gd", require("telescope.builtin").lsp_definitions, "go definition")
   bufmap("gD", vim.lsp.buf.declaration, "go declaration")
   bufmap("gI", vim.lsp.buf.implementation, "go implementation")
   bufmap("<leader>D", vim.lsp.buf.type_definition, "go type definition")
