@@ -16,6 +16,11 @@ charset = utf-8
 indent_style = space
 indent_size = 2
 
+# Match lua files, set indent to spaces with width of two
+[*.lua]
+indent_style = space
+indent_size = 2
+
 # Match C++/C/shell/Perl, set indent to spaces with width of four
 [*.{hpp,cc,hh,c,h,sh,pl,xs}]
 indent_style = space
