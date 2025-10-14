@@ -55,6 +55,7 @@
       tokyonight-nvim
       vim-tmux-navigator
       persistence-nvim
+      which-key-nvim
     ];
   };
   home.activation.linkMyFiles = config.lib.dag.entryAfter [ "writeBoundary" ] ''
