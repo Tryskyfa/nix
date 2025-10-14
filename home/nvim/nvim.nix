@@ -54,6 +54,7 @@
       telescope-nvim
       tokyonight-nvim
       vim-tmux-navigator
+      persistence-nvim
     ];
   };
   home.activation.linkMyFiles = config.lib.dag.entryAfter [ "writeBoundary" ] ''
