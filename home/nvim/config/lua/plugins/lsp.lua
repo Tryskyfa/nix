@@ -1,22 +1,22 @@
 local on_attach = function(_, bufnr)
-  local bufmap = function(keys, func)
-    vim.keymap.set("n", keys, func, { buffer = bufnr })
+  local bufmap = function(keys, func, desc)
+    vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc, remap = true })
   end
 
-  bufmap("<leader>cr", vim.lsp.buf.rename)
-  bufmap("<leader>ca", vim.lsp.buf.code_action)
-  bufmap("<leader>cd", vim.diagnostic.open_float)
+  bufmap("<leader>cr", vim.lsp.buf.rename, "rename")
+  bufmap("<leader>ca", vim.lsp.buf.code_action, "code_action")
+  bufmap("<leader>cd", vim.diagnostic.open_float, "code diagnostic")
 
-  bufmap("gd", vim.lsp.buf.definition)
-  bufmap("gD", vim.lsp.buf.declaration)
-  bufmap("gI", vim.lsp.buf.implementation)
-  bufmap("<leader>D", vim.lsp.buf.type_definition)
+  bufmap("gd", vim.lsp.buf.definition, "go definition")
+  bufmap("gD", vim.lsp.buf.declaration, "go declaration")
+  bufmap("gI", vim.lsp.buf.implementation, "go implementation")
+  bufmap("<leader>D", vim.lsp.buf.type_definition, "go type definition")
 
-  bufmap("gr", require("telescope.builtin").lsp_references)
-  bufmap("<leader>s", require("telescope.builtin").lsp_document_symbols)
-  bufmap("<leader>S", require("telescope.builtin").lsp_dynamic_workspace_symbols)
+  bufmap("gr", require("telescope.builtin").lsp_references, "list lsp references")
+  bufmap("<leader>s", require("telescope.builtin").lsp_document_symbols, "list lsp document symbols")
+  bufmap("<leader>S", require("telescope.builtin").lsp_dynamic_workspace_symbols, "list lsp dynamic workspace symbols")
 
-  bufmap("K", vim.lsp.buf.hover)
+  bufmap("K", vim.lsp.buf.hover, "show info")
 
   vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
     vim.lsp.buf.format()
