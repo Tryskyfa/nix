@@ -106,15 +106,29 @@ vim.lsp.config("ruff", {
   end,
 })
 
-require("lspconfig").tinymist.setup({
+vim.lsp.enable("tinymist")
+vim.lsp.config("tinymist", {
   settings = {
     formatterMode = "typstyle",
     exportPdf = "onType",
     semanticTokens = "disable",
   },
   on_attach = function(client, bufnr)
-    on_attach(client, bufnr)
-    create_format_autocommand(client, bufnr, "tinymist")
+    -- force-enable format autocommand for Tinymist
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format({
+          async = false,
+          bufnr = bufnr,
+          filter = function(client_filter)
+            return client_filter.name == "tinymist"
+          end,
+        })
+      end,
+    })
   end,
   capabilities = capabilities,
 })
