@@ -57,6 +57,7 @@
       persistence-nvim
       which-key-nvim
       nvim-autopairs
+      hardtime-nvim
     ];
   };
   home.activation.linkMyFiles = config.lib.dag.entryAfter [ "writeBoundary" ] ''
