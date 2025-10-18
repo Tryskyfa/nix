@@ -29,3 +29,8 @@ vim.opt.ignorecase = true -- ignore case in searches by default
 vim.opt.smartcase = true -- but make it case sensitive if an uppercase is entered
 
 vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
+
+vim.o.foldmethod = "expr"
+-- Default to treesitter folding
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldlevel = 99
