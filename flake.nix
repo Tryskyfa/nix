@@ -8,9 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix.url = "github:danth/stylix/release-25.05";
-
-    plugin-lazydev.url = "github:folke/lazydev.nvim";
-    plugin-lazydev.flake = false;
   };
 
   outputs =

@@ -216,27 +216,10 @@
         "type": "github"
       }
     },
-    "plugin-lazydev": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1759951614,
-        "narHash": "sha256-QZzURtkmMPLZq5stjtfsdDvthHtyMfW8OoJ/kQ3k98s=",
-        "owner": "folke",
-        "repo": "lazydev.nvim",
-        "rev": "e28ce52fc7ff79fcb76f0e79ee6fb6182fca90b9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "folke",
-        "repo": "lazydev.nvim",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "plugin-lazydev": "plugin-lazydev",
         "stylix": "stylix"
       }
     },
