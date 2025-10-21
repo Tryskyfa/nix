@@ -59,6 +59,7 @@
       nvim-autopairs
       hardtime-nvim
       noice-nvim
+      flash-nvim
     ];
   };
   home.activation.linkMyFiles = config.lib.dag.entryAfter [ "writeBoundary" ] ''
