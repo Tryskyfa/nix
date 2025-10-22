@@ -97,6 +97,7 @@
     ./cliphist.nix
     ./yazi.nix
     ./eza.nix
+    ./hyprlock.nix
   ];
 
   home.sessionVariables = {

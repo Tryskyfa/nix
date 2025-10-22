@@ -153,8 +153,8 @@
     "flakes"
   ];
 
-  # needed for swaylock to work
-  security.pam.services.swaylock = { };
+  # needed for hyprlock to work
+  security.pam.services.hyprlock = { };
 
   # needed for wacom tablet
   hardware.opentabletdriver.enable = true;

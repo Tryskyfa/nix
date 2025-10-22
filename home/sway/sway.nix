@@ -69,7 +69,7 @@
           "${mod}+Shift+9" = "move container to workspace number 9";
           "${mod}+Shift+0" = "move container to workspace number 10";
           "${mod}+Shift+r" = "reload";
-          "${mod}+Escape" = "exec swaylock";
+          "${mod}+Escape" = "exec hyprlock";
           "${mod}+Right" = "resize grow width 2";
           "${mod}+Left" = "resize shrink width 2";
           "${mod}+Up" = "resize shrink height 2";
@@ -124,46 +124,12 @@
         bindgesture swipe:3:up focus up
       '';
     };
-  stylix.targets.swaylock.enable = false;
-  programs.swaylock = {
-    enable = true;
-    settings = {
-      daemonize = true;
-      show-failed-attempts = true;
-      image = "~/Pictures/Wallpaper/galaxy-nature-aesthetic-blockscreen.jpg";
-      scaling = "fill";
-      color = "000000";
-      indicator-radius = 50;
-      indicator-thickness = 10;
-      line-color = "282A36";
-      ring-color = "BD93F9";
-      inside-color = "282A36";
-      key-hl-color = "8BE9FD";
-      separator-color = "00000000";
-      text-color = "F8F8F2";
-      text-caps-lock-color = "";
-      line-ver-color = "BD93F9";
-      ring-ver-color = "BD93F9";
-      inside-ver-color = "282A36";
-      text-ver-color = "8BE9FD";
-      ring-wrong-color = "FF5555";
-      text-wrong-color = "FF5555";
-      inside-wrong-color = "282A36";
-      inside-clear-color = "282A36";
-      text-clear-color = "8BE9FD";
-      ring-clear-color = "8BE9FD";
-      line-clear-color = "8BE9FD";
-      line-wrong-color = "282A36";
-      bs-hl-color = "8BE9FD";
-    };
-  };
-
   services.swayidle = {
     enable = true;
     timeouts = [
       {
         timeout = 180;
-        command = "${pkgs.swaylock}/bin/swaylock";
+        command = "${pkgs.hyprlock}/bin/hyprlock";
       }
       {
         timeout = 185;
@@ -174,7 +140,7 @@
     events = [
       {
         event = "before-sleep";
-        command = "${pkgs.swaylock}/bin/swaylock";
+        command = "${pkgs.hyprlock}/bin/hyprlock";
       }
     ];
   };
