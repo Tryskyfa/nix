@@ -60,6 +60,10 @@
       hardtime-nvim
       noice-nvim
       flash-nvim
+      nvim-dap
+      nvim-dap-ui
+      nvim-dap-virtual-text
+      nvim-dap-python
     ];
   };
   home.activation.linkMyFiles = config.lib.dag.entryAfter [ "writeBoundary" ] ''
