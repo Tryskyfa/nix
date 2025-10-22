@@ -72,6 +72,16 @@
     rnote
     python313
     inkscape
+    (pkgs.stdenvNoCC.mkDerivation {
+      pname = "my-fonts";
+      version = "1.0";
+      src = ./fonts;
+      installPhase = ''
+        mkdir -p $out/share/fonts
+        cp *.otf $out/share/fonts
+        cp *.ttf $out/share/fonts
+      '';
+    })
   ];
 
   imports = [
@@ -147,4 +157,5 @@
       "application/x-extension-xht" = "firefox.desktop";
     };
   };
+  fonts.fontconfig.enable = true;
 }
