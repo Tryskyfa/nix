@@ -1,4 +1,8 @@
 {
+  pkgs,
+  ...
+}:
+{
   stylix.targets.hyprlock.enable = false;
   programs.hyprlock = {
     enable = true;
@@ -17,7 +21,7 @@
         # Time-Hour
         {
           monitor = "";
-          text = "cmd[update:1000] echo \"<span>$(date +\"%H\")</span>\"";
+          text = "cmd[update:1000] echo \"<span>$(${pkgs.coreutils-full}/bin/date +\"%H\")</span>\"";
           color = "rgba(255, 255, 255, 1)";
           font_size = 125;
           font_family = "StretchPro";
@@ -28,7 +32,7 @@
         # Time-Minute
         {
           monitor = "";
-          text = "cmd[update:1000] echo \"<span>$(date +\"%M\")</span>\"";
+          text = "cmd[update:1000] echo \"<span>$(${pkgs.coreutils-full}/bin/date +\"%M\")</span>\"";
           color = "rgba(147, 196, 255, 1)";
           font_size = 125;
           font_family = "StretchPro";
@@ -39,7 +43,7 @@
         # Day-Month-Date
         {
           monitor = "";
-          text = "cmd[update:1000] echo -e \"$(date +\"%d %B, %a.\")\"";
+          text = "cmd[update:1000] echo -e \"$(${pkgs.coreutils-full}/bin/date +\"%d %B, %a.\")\"";
           color = "rgba(255, 255, 255, 100)";
           font_size = 22;
           font_family = "Suisse Int'l Mono";
