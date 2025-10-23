@@ -108,4 +108,16 @@
   };
 
   security.pki.certificateFiles = [ "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt" ];
+
+  # Fingerprint Sensor
+  services.fprintd.enable = true;
+
+  # Disable PAM fingerprint integration
+  security.pam.services = {
+    login.fprintAuth = false;
+    sudo.fprintAuth = false;
+    polkit-1.fprintAuth = false;
+    gdm-fingerprint.fprintAuth = false;
+    greetd.fprintAuth = false;
+  };
 }

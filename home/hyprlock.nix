@@ -12,6 +12,11 @@
         grace = 0;
         disable_loading_bar = false;
       };
+      auth = {
+        fingerprint = {
+          enabled = true;
+        };
+      };
       background = {
         monitor = "";
         path = "~/Pictures/Wallpaper/lockscreen.jpeg"; # only png supported for now
