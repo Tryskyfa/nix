@@ -114,10 +114,6 @@
 
   # Disable PAM fingerprint integration
   security.pam.services = {
-    login.fprintAuth = false;
-    sudo.fprintAuth = false;
-    polkit-1.fprintAuth = false;
-    gdm-fingerprint.fprintAuth = false;
     greetd.fprintAuth = false;
   };
 }
