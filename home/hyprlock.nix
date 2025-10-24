@@ -1,5 +1,6 @@
 {
   pkgs,
+  host,
   ...
 }:
 {
@@ -14,7 +15,7 @@
       };
       auth = {
         fingerprint = {
-          enabled = true;
+          enabled = host == "laptop";
         };
       };
       background = {
