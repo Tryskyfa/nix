@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  host,
+  ...
+}:
 {
   home.packages = with pkgs; [
     font-awesome
@@ -150,7 +155,9 @@
         format = "{}%  ";
       };
       temperature = {
-        thermal-zone = 1;
+        thermal-zone = if host == "dekstop" then 1 else null;
+        hwmon-path =
+          if host == "laptop" then "/sys/devices/platform/thinkpad_hwmon/hwmon/hwmon5/temp1_input" else null;
         critical-threshold = 80;
         format-critical = "{temperatureC}°C {icon}";
         format = "{temperatureC}°C {icon}";
