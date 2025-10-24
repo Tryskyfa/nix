@@ -28,6 +28,7 @@
           allowUnfree = true;
         };
       };
+
     in
     {
       nixosConfigurations = {
@@ -48,6 +49,9 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.tryskyfa = import ./home/home.nix;
+              home-manager.extraSpecialArgs = {
+                host = "desktop";
+              };
             }
             stylix.nixosModules.stylix
             ./stylix/stylix.nix
@@ -70,6 +74,9 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.tryskyfa = import ./home/home.nix;
+              home-manager.extraSpecialArgs = {
+                host = "laptop";
+              };
             }
             stylix.nixosModules.stylix
             ./stylix/stylix.nix
