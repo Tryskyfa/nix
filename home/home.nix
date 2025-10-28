@@ -27,7 +27,6 @@
     imagemagick
     noto-fonts
     htop
-    btop
     pavucontrol
     fd
     xournalpp
@@ -98,6 +97,7 @@
     ./yazi.nix
     ./eza.nix
     ./hyprlock.nix
+    ./btop.nix
   ];
 
   home.sessionVariables = {
