@@ -23,26 +23,6 @@ local on_attach = function(_, bufnr)
   end, {})
 end
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-local create_format_autocommand = function(client, bufnr, name)
-  if client.supports_method("textDocument/formatting") then
-    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      group = augroup,
-      buffer = bufnr,
-      callback = function()
-        vim.lsp.buf.format({
-          async = false,
-          bufnr = bufnr,
-          filter = function(client_filter)
-            return client_filter.name == name
-          end,
-        })
-      end,
-    })
-  end
-end
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
@@ -74,7 +54,6 @@ require("lspconfig").nil_ls.setup({
 require("lspconfig").clangd.setup({
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
-    create_format_autocommand(client, bufnr, "clangd")
     vim.keymap.set("n", "<leader>ch", "<cmd>ClangdSwitchSourceHeader<cr>", { buffer = bufnr })
   end,
   capabilities = capabilities,
@@ -102,7 +81,6 @@ vim.lsp.enable("ruff")
 vim.lsp.config("ruff", {
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
-    create_format_autocommand(client, bufnr, "ruff")
   end,
 })
 
@@ -138,7 +116,6 @@ vim.lsp.config("hls", {
   filetypes = { "haskell", "lhaskell", "cabal" },
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
-    create_format_autocommand(client, bufnr, "hls")
   end,
 })
 
@@ -146,6 +123,5 @@ vim.lsp.enable("sqls")
 vim.lsp.config("sqls", {
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
-    create_format_autocommand(client, bufnr, "sqls")
   end,
 })

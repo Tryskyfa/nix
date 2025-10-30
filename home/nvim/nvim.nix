@@ -44,7 +44,7 @@
       luasnip
       mini-surround
       neo-tree-nvim
-      none-ls-nvim
+      conform-nvim
       nvim-cmp
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
