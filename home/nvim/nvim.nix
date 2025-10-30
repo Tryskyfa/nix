@@ -19,11 +19,13 @@
       tinymist
       haskell-language-server
       sqls
+      texlab
 
       # formater
       nixfmt-rfc-style
       stylua
       ruff
+      tex-fmt
 
       # extra
       fd

@@ -125,3 +125,10 @@ vim.lsp.config("sqls", {
     on_attach(client, bufnr)
   end,
 })
+
+vim.lsp.enable("texlab")
+vim.lsp.config("texlab", {
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+  end,
+})
