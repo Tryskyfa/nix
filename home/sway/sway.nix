@@ -76,7 +76,7 @@
           "${mod}+Down" = "resize grow height 2";
           "${mod}+space" = "floating toggle";
           "${mod}+p" =
-            "exec zathura ~/\"$(fd --base-directory ~ --type file --extension \".pdf\" | fuzzel -d --width 180 --prompt=\"󰈦 \")\"";
+            "exec zathura ~/\"$(fd --no-ignore --base-directory ~ --type file --extension \".pdf\" | fuzzel -d --width 180 --prompt=\"󰈦 \")\"";
           "${mod}+x" =
             "exec xournalpp ~/\"$(fd --base-directory ~ --type file --extension \".xopp\" | fuzzel -d --width 180)\"";
           "${mod}+Shift+x" =
