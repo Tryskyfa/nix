@@ -98,6 +98,7 @@
     ./eza.nix
     ./hyprlock.nix
     ./btop.nix
+    ./nix-shell.nix
   ];
 
   home.sessionVariables = {
