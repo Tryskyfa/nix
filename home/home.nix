@@ -99,6 +99,7 @@
     ./hyprlock.nix
     ./btop.nix
     ./nix-shell.nix
+    ./vscode.nix
   ];
 
   home.sessionVariables = {

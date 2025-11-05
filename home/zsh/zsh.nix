@@ -48,7 +48,7 @@
           autoload -Uz promptinit && promptinit && prompt powerlevel10k
         '';
         zshConfigLate = lib.mkAfter ''
-          if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+          if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [[ ! "$TERM_PROGRAM" =~ vscode ]] && [ -z "$TMUX" ] ; then
             if tmux list-sessions > /dev/null; then
               exec tmux attach
             else
