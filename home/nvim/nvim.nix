@@ -66,6 +66,7 @@
       nvim-dap-ui
       nvim-dap-virtual-text
       nvim-dap-python
+      lean-nvim
     ];
   };
   home.activation.linkMyFiles = config.lib.dag.entryAfter [ "writeBoundary" ] ''

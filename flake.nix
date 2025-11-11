@@ -23,6 +23,7 @@
     let
       system = "x86_64-linux";
       overlay-unstable = final: prev: {
+        vimPlugins.lean-nvim = (import nixpkgs-unstable { inherit system; }).vimPlugins.lean-nvim;
       };
       pkgs = import nixpkgs {
         inherit system;
