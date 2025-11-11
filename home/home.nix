@@ -71,6 +71,7 @@
     rnote
     python313
     inkscape
+    lean4
     (pkgs.stdenvNoCC.mkDerivation {
       pname = "my-fonts";
       version = "1.0";
