@@ -8,4 +8,5 @@ require("hardtime").setup({
     "dapui_stacks",
     "dapui_watches",
   },
+  disable_mouse = false,
 })
