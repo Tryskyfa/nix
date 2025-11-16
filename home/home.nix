@@ -72,6 +72,8 @@
     python313
     inkscape
     lean4
+    todoist-electron
+    planify
     (pkgs.stdenvNoCC.mkDerivation {
       pname = "my-fonts";
       version = "1.0";
