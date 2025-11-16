@@ -90,17 +90,17 @@
     ./sway/sway.nix
     ./sway/kanshi.nix
     ./waybar/waybar.nix
-    ./fzf.nix
-    ./fuzzel.nix
-    ./nh.nix
-    ./zathura.nix
-    ./cliphist.nix
-    ./yazi.nix
-    ./eza.nix
-    ./hyprlock.nix
-    ./btop.nix
-    ./nix-shell.nix
-    ./vscode.nix
+    ./extra/fzf.nix
+    ./extra/fuzzel.nix
+    ./extra/nh.nix
+    ./extra/zathura.nix
+    ./extra/cliphist.nix
+    ./extra/yazi.nix
+    ./extra/eza.nix
+    ./extra/hyprlock.nix
+    ./extra/btop.nix
+    ./extra/nix-shell.nix
+    ./extra/vscode.nix
   ];
 
   home.sessionVariables = {
