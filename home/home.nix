@@ -74,6 +74,7 @@
     lean4
     todoist-electron
     planify
+    protonvpn-gui
     (pkgs.stdenvNoCC.mkDerivation {
       pname = "my-fonts";
       version = "1.0";
