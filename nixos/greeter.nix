@@ -4,13 +4,13 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    greetd.tuigreet
+    tuigreet
   ];
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd sway ${colorwave}";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd sway ${colorwave}";
         user = "greeter";
       };
     };

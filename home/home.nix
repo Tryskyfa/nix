@@ -52,7 +52,7 @@
     rofimoji
     wev
     diffpdf
-    bitwarden
+    bitwarden-desktop
     usbutils
     R
     onlyoffice-desktopeditors
