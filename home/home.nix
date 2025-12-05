@@ -114,7 +114,7 @@
     GIT_ASKPASS = ''${pkgs.seahorse}/libexec/seahorse/ssh-askpass'';
     SSH_ASKPASS_REQUIRE = "prefer";
     # used by gnome-keyring, there is probably a better solution but this works
-    SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
+    SSH_AUTH_SOCK = "/run/user/1000/gcr/ssh";
   };
 
   xdg.desktopEntries.feh = {
