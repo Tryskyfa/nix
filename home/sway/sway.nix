@@ -90,10 +90,10 @@
           "${mod}+comma" =
             "exec rofimoji --files nerd_font.csv --selector fuzzel --selector-args=\"--width 120\"";
 
-          "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -1%";
-          "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +1%";
-          "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
-          "XF86AudioMicMute" = "exec pactl set-sink-input-mute @DEFAULT_SINK@ toggle";
+          "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-";
+          "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+";
+          "XF86AudioMute" = "exec wpctl set-mute   @DEFAULT_AUDIO_SINK@ toggle";
+          "XF86AudioMicMute" = "exec wpctl set-mute   @DEFAULT_AUDIO_SOURCE@ toggle";
           "XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
           "XF86MonBrightnessUp" = "exec brightnessctl set 5%+";
           "XF86AudioPlay" = "exec playerctl play-pause";
