@@ -26,6 +26,7 @@
       stylua
       ruff
       tex-fmt
+      yamlfmt
 
       # extra
       fd

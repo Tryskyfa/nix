@@ -5,6 +5,7 @@ conform.setup({
     lua = { "stylua" },
     nix = { "nixfmt" },
     tex = { "tex-fmt" },
+    yaml = { "yamlfmt" },
   },
   format_on_save = {
     lsp_format = "fallback",
