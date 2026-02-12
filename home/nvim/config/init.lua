@@ -2,6 +2,7 @@
 require("core.options") -- keep first
 require("core.keymaps")
 require("core.autocmds")
+require("core.cmds")
 
 -- plugins
 require("plugins.tokyonight")
