@@ -49,11 +49,7 @@
         '';
         zshConfigLate = lib.mkAfter ''
           if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [[ ! "$TERM_PROGRAM" =~ vscode ]] && [ -z "$TMUX" ] ; then
-            if tmux list-sessions > /dev/null; then
-              exec tmux attach
-            else
-              exec tmux
-            fi
+            exec tmux
           fi
         '';
       in
