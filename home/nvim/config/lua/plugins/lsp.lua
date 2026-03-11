@@ -132,3 +132,25 @@ vim.lsp.config("texlab", {
     on_attach(client, bufnr)
   end,
 })
+
+vim.lsp.enable("jdtls")
+vim.lsp.enable("jdtls")
+vim.lsp.config("jdtls", {
+  on_attach = function(client, bufnr)
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format({
+          async = false,
+          bufnr = bufnr,
+          filter = function(client_filter)
+            return client_filter.name == "jdtls"
+          end,
+        })
+      end,
+    })
+  end,
+  capabilities = capabilities,
+})

@@ -20,6 +20,7 @@
       haskell-language-server
       sqls
       texlab
+      jdt-language-server
 
       # formater
       nixfmt-rfc-style
@@ -68,6 +69,7 @@
       nvim-dap-virtual-text
       nvim-dap-python
       lean-nvim
+      nvim-jdtls
     ];
   };
   home.activation.linkMyFiles = config.lib.dag.entryAfter [ "writeBoundary" ] ''
