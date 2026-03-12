@@ -137,6 +137,7 @@ vim.lsp.enable("jdtls")
 vim.lsp.enable("jdtls")
 vim.lsp.config("jdtls", {
   on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
     vim.api.nvim_create_autocmd("BufWritePre", {
       group = augroup,
