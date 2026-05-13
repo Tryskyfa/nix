@@ -51,7 +51,8 @@ require("lspconfig").nil_ls.setup({
   capabilities = capabilities,
 })
 
-require("lspconfig").clangd.setup({
+vim.lsp.enable("clangd")
+vim.lsp.config("clangd", {
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     vim.keymap.set("n", "<leader>ch", "<cmd>ClangdSwitchSourceHeader<cr>", { buffer = bufnr })
@@ -63,13 +64,8 @@ require("lspconfig").clangd.setup({
     "--clang-tidy",
     "--header-insertion=iwyu",
     "--completion-style=detailed",
-    "--function-arg-placeholders",
   },
-  init_options = {
-    usePlaceholders = true,
-    completeUnimported = true,
-    clangdFileStatus = true,
-  },
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
 })
 
 vim.lsp.enable("pyright")
