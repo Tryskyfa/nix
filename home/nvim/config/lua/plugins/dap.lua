@@ -1,8 +1,44 @@
 local dap = require("dap")
 local ui = require("dapui")
 
-require("dapui").setup({})
+ui.setup({})
 
+-- c lang
+dap.adapters.gdb = {
+  type = "executable",
+  command = "gdb",
+  args = { "--interpreter=dap", "--quiet" },
+}
+
+dap.configurations.c = {
+  {
+    name = "Launch GDB",
+    type = "gdb",
+    request = "launch",
+
+    program = function()
+      local co = coroutine.running()
+
+      return coroutine.create(function()
+        vim.ui.input({
+          prompt = "Path to executable: ",
+          default = vim.fn.getcwd() .. "/",
+          completion = "file",
+        }, function(input)
+          coroutine.resume(co, input)
+        end)
+      end)
+    end,
+
+    cwd = "${workspaceFolder}",
+    stopAtBeginningOfMainSubprogram = false,
+  },
+}
+
+-- cpp
+dap.configurations.cpp = dap.configurations.c
+-- rust
+dap.configurations.rust = dap.configurations.c
 require("nvim-dap-virtual-text").setup({
   -- This just tries to mitigate the chance that I leak tokens here. Probably won't stop it from happening...
   display_callback = function(variable)
