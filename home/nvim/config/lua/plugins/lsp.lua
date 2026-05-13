@@ -55,7 +55,8 @@ vim.lsp.enable("clangd")
 vim.lsp.config("clangd", {
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
-    vim.keymap.set("n", "<leader>ch", "<cmd>ClangdSwitchSourceHeader<cr>", { buffer = bufnr })
+    vim.keymap.set("n", "<leader>ch", "<cmd>ClangdSwitchSourceHeader<cr>", { desc = "Switch Header", buffer = bufnr })
+    vim.keymap.set("n", "<leader>ct", "<cmd>ClangdTypeHierarchy<cr>", { desc = "Type Hierarchy", buffer = bufnr })
   end,
   capabilities = capabilities,
   cmd = {

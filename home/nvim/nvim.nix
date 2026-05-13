@@ -70,6 +70,7 @@
       nvim-dap-python
       lean-nvim
       nvim-jdtls
+      clangd_extensions-nvim
     ];
   };
   home.activation.linkMyFiles = config.lib.dag.entryAfter [ "writeBoundary" ] ''
