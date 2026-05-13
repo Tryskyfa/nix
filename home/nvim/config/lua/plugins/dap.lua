@@ -1,5 +1,10 @@
 local dap = require("dap")
+local finders = require("telescope.finders")
+local pickers = require("telescope.pickers")
 local ui = require("dapui")
+local conf = require("telescope.config").values
+local action_state = require("telescope.actions.state")
+local actions = require("telescope.actions")
 
 ui.setup({})
 
@@ -10,25 +15,39 @@ dap.adapters.gdb = {
   args = { "--interpreter=dap", "--quiet" },
 }
 
+local function pick_executable()
+  return coroutine.create(function(co)
+    local results = vim.fn.systemlist([[find . -type f -executable 2>/dev/null]])
+
+    pickers
+      .new({}, {
+        prompt_title = "Select executable",
+        finder = finders.new_table({
+          results = results,
+        }),
+        sorter = conf.generic_sorter({}),
+
+        attach_mappings = function(prompt_bufnr)
+          actions.select_default:replace(function()
+            actions.close(prompt_bufnr)
+
+            local selection = action_state.get_selected_entry()
+            coroutine.resume(co, selection[1])
+          end)
+
+          return true
+        end,
+      })
+      :find()
+  end)
+end
 dap.configurations.c = {
   {
     name = "Launch GDB",
     type = "gdb",
     request = "launch",
 
-    program = function()
-      local co = coroutine.running()
-
-      return coroutine.create(function()
-        vim.ui.input({
-          prompt = "Path to executable: ",
-          default = vim.fn.getcwd() .. "/",
-          completion = "file",
-        }, function(input)
-          coroutine.resume(co, input)
-        end)
-      end)
-    end,
+    program = pick_executable,
 
     cwd = "${workspaceFolder}",
     stopAtBeginningOfMainSubprogram = false,
@@ -64,7 +83,10 @@ vim.keymap.set("n", "<F3>", dap.step_over, { desc = "Dap step over" })
 vim.keymap.set("n", "<F4>", dap.step_out, { desc = "Dap step out" })
 vim.keymap.set("n", "<F5>", dap.step_back, { desc = "Dap step back" })
 vim.keymap.set("n", "<F11>", dap.restart, { desc = "Dap restart" })
-vim.keymap.set("n", "<F12>", dap.terminate, { desc = "Dap terminate" })
+vim.keymap.set("n", "<F12>", function()
+  dap.terminate()
+  ui.close()
+end, { desc = "Dap terminate" })
 
 dap.listeners.before.attach.dapui_config = function()
   ui.open()
