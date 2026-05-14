@@ -151,3 +151,9 @@ vim.lsp.config("jdtls", {
   end,
   capabilities = capabilities,
 })
+
+vim.lsp.enable("rust_analyzer")
+vim.lsp.config("rust_analyzer", {
+  on_attach = on_attach,
+  capabilities = capabilities,
+})

@@ -21,6 +21,8 @@
       sqls
       texlab
       jdt-language-server
+      rust-analyzer
+      rustfmt
 
       # formater
       nixfmt-rfc-style
