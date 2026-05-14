@@ -131,7 +131,6 @@ vim.lsp.config("texlab", {
 })
 
 vim.lsp.enable("jdtls")
-vim.lsp.enable("jdtls")
 vim.lsp.config("jdtls", {
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
